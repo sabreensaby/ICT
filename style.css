@@ -407,7 +407,66 @@ padding-left:15%;
     color: #333;
 }
 														/* footer ends */
+														/* Contact page starts */
+
+#cont{
+	background-image:url(images/galary2.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	
+	
+}
 														
+#contact{
+margin-left:10%;	
+margin-top:3%;
+background:rgba(0,0,0,0.48);
+margin-right:60%;
+padding-bottom:3%;
+border-radius:8px;
+box-shadow:0 0 20px #000000b3;
+opacity:1;
+
+}
+
+#contact h1{
+	padding-top:3%;
+	color:white;
+	padding-left:2%; 
+}
+
+#contact p{
+	color:white;
+	padding-left:2%;
+}	
+													
+#contactus{
+	float:right;
+	width:350px;
+	margin-top:1.3%;
+	margin-right:10%;
+	background:#f1f1f1;
+	padding:30px 40px;
+	border-radius:8px;
+	margin-bottom:2%;
+	box-shadow:0 0 20px #000000b3;
+	
+}
+
+#contactus h1{
+	text-align:center;
+	  
+	  font-size:16px;
+	  text-transform: uppercase;
+	  color:black;
+}
+#contactus p {
+	text-align:center;
+	  
+	  font-size:12px;
+	  color:black;
+	 
+}
 														
-														
-														
+													/* Contact page end */
