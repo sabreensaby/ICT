@@ -7,6 +7,10 @@ charset "utf-8";
 	
 }
 
+body{
+	
+background:#F8F8FF;
+}
 
 														/*logo*/
 #logo{
@@ -115,11 +119,11 @@ nav ul li.active a {
 																/* slider start */
 
 #slider{
-	width: 99.93%;
+	width: 99%;
 	height: 400px;
 	position: absolute;
 	left:0.53%;
-	top:20.5%;
+	top:146px;
 	
 	
 	background-size: 100% 100%;
@@ -204,12 +208,13 @@ h1.section-title{
 
 .service-box{
 	text-align:center;
-	margin-left:10%;
+	margin-left:20%;
 	
 	color:black;
 	cursor:pointer;
 	
 }
+
 
 .service-img{
 	display:inline-block;
@@ -470,3 +475,7 @@ opacity:1;
 }
 														
 													/* Contact page end */
+													
+													
+													
+													
