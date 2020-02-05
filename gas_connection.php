@@ -47,10 +47,10 @@
   <label>Gas Service Provider</label>
 <select name="gas_provider">
   <option value="Select">Select</option>
-  <option value="high">Indane Gas</option>
-  <option value="low">Bharat Gas</option>
-  <option value="casual">Gujrat Gas</option>
-    <option value="fast">Indian Gas</option>
+  <option value="Indane">Indane Gas</option>
+  <option value="Bharat">Bharat Gas</option>
+  <option value="Gujarat">Gujarat Gas</option>
+    <option value="Indian">Indian Gas</option>
  
 
 </select>
@@ -60,17 +60,17 @@
 
 <div class="input-group">
 <label>Details</label>
-<textarea name="details"></textarea><br>
+<textarea name="gas_details"></textarea><br>
 </div>
 <div class="input-group">
 <label>Price</label>
-<input type="text" name="price" required><br>
+<input type="text" name="gas_price" required><br>
 </div>
 <div class="input-group">
-<button type="submit" class="btn" name="ok_service">OK</button>
+<button type="submit" class="btn" name="ok_gas">OK</button>
 </div>
 <div class="input-group">
-<button type="cancel" class="btn" name="cancel_service">CANCEL</button>
+<button type="cancel" class="btn" name="cancel_gas">CANCEL</button>
 </div>
 </form>
 
