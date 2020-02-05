@@ -1,27 +1,22 @@
-<!doctype html>
+<?php include('server.php') ?>
+<!DOCTYPE html>
 <html>
 <head>
-<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- meta character set -->
-		<meta charset="utf-8">
-<title> Consultation </title>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-
-
+  <title>Registration system PHP and MySQL</title>
+  <link rel="stylesheet" type="text/css" href="registration.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="wrapper">
-	
-<!-- Navigation Bar -->
+
+<div id="wrapper">
+	<!-- Navigation Bar -->
 	        <nav>
 			
 			
 			
 			<div class="button"> 
-				<a href= "sign_in.html" class="btn btn-two"> Sign In</a>
-			<a href= "sign_up.html" class="btn btn-two">Sign Up</a>
+				<a href= "login.php" class="btn btn-two"> Sign In</a>
+			<a href= "registration.php" class="btn btn-two">Sign Up</a>
 	</div> 
 	<div id="logo">
 	<a href="index.html"> <img src="images/logo3.png" style="height:150px;"> </a>
@@ -35,34 +30,33 @@
 					
 					<li> <a href = "package.html" id= "3" onClick= "nav_li_selected(4)"> Package </a> </li>
 					<li> <a href = "about.html" id= "4" onClick= "nav_li_selected(4)"> About Us </a> </li>
-					<li > <a href = "contact.php" id= "5" onClick= "nav_li_selected(4)"> Contact Us</a> </li>
+					<li > <a href = "contact.html" id= "5" onClick= "nav_li_selected(4)"> Contact Us</a> </li>
 									</ul>
 			</nav>
-															<!-- Navigation Bar ends -->
-															<!-- About start-->
-	<section>
-	<div id= "design">
-		<div class="content">  </div>
-		
-		<div class="desig_a">
-			<h3> Our Mission</h3>
-			<p>Our mission is to feel, see and provide the best services we can. 
-			
-</p>
-		</div>
-		<div class="desig_a">
-			<h3>Our Promise </h3>
-			<p> We make magic. Our promise is to deliver optimistic and diverse projects. </p>
-		</div>
-		<div class="imageBox"> </div>
-		
+	<!-- Navigation Bar ends -->
+  <div class="header">
+  	<h2>Login</h2>
+  </div>
+	 
+  <form method="post" action="web/index.html">
 
-	</div>
-</section>
-															
-															<!-- About end-->
-															
-															<!-- footer --> 
+  	<div class="input-group">
+  		<label>Username</label>
+  		<input type="text" name="username" required>
+  	</div>
+  	<div class="input-group">
+  		<label>Password</label>
+  		<input type="password" name="password" required>
+  	</div>
+  	<div class="input-group">
+  		<button type="submit" class="btn" name="login_user">Login</button>
+  	</div>
+  	<p>
+  		Not yet a member? <a href="registration.php">Sign up</a>
+  	</p>
+  </form>
+  </div>
+													<!-- footer --> 
 	<footer class="footer">
 	<div class="foot ">
 		<div class="row footer-grids">
