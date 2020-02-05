@@ -75,7 +75,7 @@
 <!-- Kitchen SetUp start-->
 	
 	<div class="services">
-	<h1 class="section-title">KITCHEN SETUP </h1>
+	<h1 class="section-title">Restaurant Setup </h1>
 	 
 	
 	 
@@ -85,7 +85,7 @@
 	<img src="images/kitchen staff.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
-	<div class="service-title"><a href = "kitchen_staff.php"> Kitchen Staff </a> </div>
+	<div class="service-title"><a href = "gas_connection.php"> Gas Connection </a> </div>
 	
 	
 	</div>
@@ -97,7 +97,7 @@
 	
 	</div>
 	
-	<div class="service-title"><a href = "kitchen_equipment.php"> Kitchen Equipment </a> </div>
+	<div class="service-title"><a href = "water_connection.php"> Water Connection </a> </div>
 	
 	</div>
 	
@@ -108,7 +108,7 @@
 	
 	</div>
 	
-	<div class="service-title"><a href = "kitchen_services.php"> Kitchen Service </a> </div>
+	<div class="service-title"><a href = "electricity_connection.php"> Electricity Connection </a> </div>
 	
 	
 	
