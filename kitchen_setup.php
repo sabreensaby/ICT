@@ -93,7 +93,7 @@
 	
 	<div class="service-box1"> 
 	<div class="serice-img">
-	<img src="images/kitchen equipment.jpg" class="img-responsive" alt="img" title="img" style= "height:100px;">
+	<img src="images/kitchen equipment.jpg" class="img-responsive" alt="img" title="img" style= "height:198px;">
 	
 	</div>
 	
