@@ -82,7 +82,7 @@
 	<div class="services-container">
 	<div class="service-box1"> 
 	<div class="serice-img">
-	<img src="images/galary2.jpg" class="img-responsive" alt="img" title="img">
+	<img src="images/kitchen staff.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	<div class="service-title">Kitchen Staff </div>
@@ -93,7 +93,7 @@
 	
 	<div class="service-box1"> 
 	<div class="serice-img">
-	<img src="images/galary2.jpg" class="img-responsive" alt="img" title="img">
+	<img src="images/kitchen equipment.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	
@@ -104,7 +104,7 @@
 	
 	<div class="service-box1"> 
 	<div class="serice-img">
-	<img src="images/galary2.jpg" class="img-responsive" alt="img" title="img">
+	<img src="images/kitchen services.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	
