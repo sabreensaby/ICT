@@ -172,6 +172,68 @@ mysqli_close($conn);
 }
 
 
+//MENU DESIGN
+
+if (isset($_POST['ok_menu'])) {
+    
+$menu_type = $_POST['menu_type'];
+$menu_details = $_POST['menu_details'];
+$menu_price =$_POST['menu_price'];
+
+
+
+$sql = "INSERT INTO menu_design (menu_type, menu_details, menu_price) VALUES ('$menu_type','$menu_details','$menu_price')";
+if (mysqli_query($conn, $sql)) {
+    echo "New menu has been added";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+}
+
+//receipies DESIGN
+
+if (isset($_POST['ok_receipie'])) {
+    
+$receipies_type = $_POST['receipies_type'];
+$receipie_details = $_POST['receipie_details'];
+$receipie_price =$_POST['receipie_price'];
+
+
+
+$sql = "INSERT INTO receipie_design (receipie_type, receipie_details, receipie_price) VALUES ('$receipie_type','receipie_details','$receipie_price')";
+if (mysqli_query($conn, $sql)) {
+    echo "New recceipies has been added";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+}
+
+//Interior DESIGN
+
+if (isset($_POST['ok_interior'])) {
+    
+$interior_type = $_POST['interior_type'];
+$interior_details = $_POST['interior_details'];
+$interior_price =$_POST['interior_price'];
+
+
+
+$sql = "INSERT INTO interior_design (interior_type, interior_details, interior_price) VALUES ('$interior_type','interior_details','$interior_price')";
+if (mysqli_query($conn, $sql)) {
+    echo "New interior has been added";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+}
+
+
+
 // LOGIN USER
 if (isset($_POST['login_user'])) {
   $username = $_POST['username'];

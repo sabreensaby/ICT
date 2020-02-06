@@ -20,7 +20,7 @@
 															<!-- About start-->
 	<section>
 	<div id= "design">
-		<div class="content">  </div>
+		
 		
 		<div class="desig_a">
 			<h3> Our Mission</h3>

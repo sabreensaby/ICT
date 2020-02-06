@@ -50,8 +50,11 @@
 	window.onload = changeImg;
 
 </script>
-
+<div class= "text" >
 <img name="slide" width="99%" height="400px;">
+ <h2> "Build Your Own Dream Restaurant, We are here to help you for your turn-key projects." </h2> 
+
+</div>
 		</div>
 		
 		
@@ -66,10 +69,10 @@
 	<div class="services-container">
 	<div class="service-box"> 
 	<div class="service-img">
-	<img src="images/kitchen.png" class="img-responsive" alt="img" title="img">
+	<img src="images/kitchen.png" class="img-responsive" alt="img" title="img" >
 	
 	</div>
-	<div class="service-title"><a href = "kitchen_setup.php">Kitchen Setup </a></div>
+	<div class="service-title"><a href = "kitchen_setup.php">Kitchen Setup </a> </div>
 	<div class="service-desc">
 		
 		The Kitchen Service involves taking a client's brief then designing and managing the process of the delivery of a building. 
@@ -79,7 +82,6 @@
 	</div>
 	
 	</div>
-	
 	
 	
 	<div class="service-box"> 
@@ -132,17 +134,59 @@
 	</div>
 	
 	</div>
-	
 	</div>
 	
 	</div>
 	
 	
 														<!--Services end-->
-		
+														<!-- Background Image-->
+														
+<div id="section">
+
+
+</div>
+														
+														<!-- Background Image end-->
+							
+        
+													<!-- Success stories-->
+													
+<div id="stories">
+<h1 class="section-title">our stories </h1>
+
+<div id="story"> 
+
+<div class="space">  <img src="images/galary3.jpg" class="img-res">XYZ Company<hr>
+ 
+
+<div class="story-desc"> Pune special tea at Chai Spot Amruttulya tea is a fant.
+</div></div>
+
+
+<div class="space"> <img src="images/galary2.jpg" class="img-res">YZR Company<hr>
+ <div class="story-desc"> It is really impossible for some people to start the day without a cup of tea or coffee.
+</div> </div> 
+<div class="space"><img src="images/galary4.jpg" class="img-res"> ZYH Company<hr>
+<div class="story-desc">  More than 70% of the Indian population.
+</div></div>
+
+</div>
+</div>
+													<!-- Success stories end-->
+													<!-- Admin login-->
+													
+<div id="section1">
+
+</div>
+													
+													<!-- Admin login end-->
+
+	<!----------Admin Area-------------->
+	<a href = "admin_login.php"> Admin Login </a>
+	
 													<!-- footer --> 
 	<?php include("include/footer.inc") ?>
-	<!-- footer end -->
     
 </body>
 </html>
