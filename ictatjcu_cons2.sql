@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 09:58 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Generation Time: Feb 06, 2020 at 05:03 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `registration`
+-- Database: `ictatjcu_cons2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_area`
+--
+
+CREATE TABLE `admin_area` (
+  `id` int(50) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin_area`
+--
+
+INSERT INTO `admin_area` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -131,7 +150,11 @@ CREATE TABLE `kitchen_staff` (
 
 INSERT INTO `kitchen_staff` (`id`, `name`, `email`, `role`, `skills`, `years_of_experience`, `additional_details`) VALUES
 (1, 'Robin', 'robin@gmail.com', 'souschef', 'italian cuisine expert', 4, 'master chef'),
-(2, 'manpreet kaur', 'manpreetkaur81993@gmail.com', 'headchef', 'italian cuisine expert', 4, 'master chef');
+(2, 'manpreet kaur', 'manpreetkaur81993@gmail.com', 'headchef', 'italian cuisine expert', 4, 'master chef'),
+(3, 'sabreen', 'sabreen@gmail.com', 'cleaners', 'worst cleaning', 5, 'can clean toilets'),
+(4, 'HARJEET SINGH', 'harj91@gmail.com', 'headchef', 'italian cuisine expert', 2, ''),
+(5, 'suzzu', 'suzzu@gmail.com', 'headchef', 'italian cuisine expert', 4, 'best'),
+(6, 'kiara', 'suzzu@gmail.com', 'headchef', 'italian cuisine expert', 4, 'best');
 
 -- --------------------------------------------------------
 
@@ -203,6 +226,12 @@ INSERT INTO `water_connection` (`id`, `water_connection_provider`, `water_connec
 --
 
 --
+-- Indexes for table `admin_area`
+--
+ALTER TABLE `admin_area`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `electricity_connection`
 --
 ALTER TABLE `electricity_connection`
@@ -249,6 +278,12 @@ ALTER TABLE `water_connection`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_area`
+--
+ALTER TABLE `admin_area`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `electricity_connection`
 --
 ALTER TABLE `electricity_connection`
@@ -276,7 +311,7 @@ ALTER TABLE `kitchen_service`
 -- AUTO_INCREMENT for table `kitchen_staff`
 --
 ALTER TABLE `kitchen_staff`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
