@@ -85,7 +85,7 @@
 	<img src="images/kitchen staff.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
-	<div class="service-title"><a href = "kitchen_staff.php"> Kitchen Staff </a> </div>
+	<div class="service-title"><a href = "show_kitchen_staff.php"> Kitchen Staff </a> </div>
 	
 	
 	</div>

@@ -1,5 +1,3 @@
-<?php include('server.php') ?>
-<!DOCTYPE html>
 <html>
 <head>
   <title>Registration system PHP and MySQL</title>
@@ -34,54 +32,23 @@
 									</ul>
 			</nav>
 	<!-- Navigation Bar ends -->
-<div class="background_image"><img src = "images/background_image.jpg"  alt="img" title="img" style= "height:50%;width:100%; opacity:0.3;z-index:-1;">
-
-<h2>Add Electricitiy Service </h2>
-	
- </div>
-
-<form action="#" method="post">
-
-
-  <div class="input-group">
-  <label>Electricitiy Service Provider</label>
-<select name="electricity_provider">
-  <option value="Select">Select</option>
-  <option value="MGVCL">MGVCL</option>
-  <option value="PGVCL">PGVCL</option>
-  <option value="DGVCL">DGVCL</option>
-    <option value="UGVCL">UGVCL</option>
- 
-
-</select>
-</div>
-
-
-
-<div class="input-group">
-<label>Details</label>
-<textarea name="electricity_details"></textarea><br>
-</div>
-<div class="input-group">
-<label>Price</label>
-<input type="text" name="electricity_price" required><br>
-</div>
-<div class="input-group">
-<button type="submit" class="btn" name="ok_electricity">OK</button>
-</div>
-<div class="input-group">
-<button type="cancel" class="btn" name="cancel_electricity">CANCEL</button>
-</div>
-</form>
-
-
-
-
-
-
-
-</div>
+		<h1>STAFF</h1>
 		
-	
-</body>
-</html>
+<?php 
+include('server.php');
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+	?>
+	<div class="staff_container" style="margin-left:280px;margin-right:280px;">
+	<div style="height:200px;width:200px;float:left;background-color:pink;padding:10px;margin:50px;"> 
+	<?php echo $row["name"]."<br>".$row["email"]."<br>".$row["skills"] 
+	?> 
+	</div>  
+	</div>
+       
+   <?php }
+} else {
+    echo "0 results";
+}
+?>

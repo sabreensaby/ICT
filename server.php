@@ -6,7 +6,7 @@ $errors = array();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "registration";
+$db = "ictatjcu_cons2";
 
 
 
@@ -187,6 +187,12 @@ if(mysqli_num_rows($query) == 1){
 
 }
 
+// SHOW KITCHEN STAFF
+$sql = "SELECT name, email, role, skills,years_of_experience,additional_details  FROM kitchen_staff";
+$result = mysqli_query($conn, $sql);
 
+
+
+mysqli_close($conn);
 
 ?>
