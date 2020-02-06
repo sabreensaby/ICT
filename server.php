@@ -172,6 +172,27 @@ mysqli_close($conn);
 }
 
 
+//ELECTRICITY CONNECTION SERVICE
+
+if (isset($_POST['ok_electricity'])) {
+    
+$electricity_provider = $_POST['electricity_provider'];
+$electricity_details = $_POST['electricity_details'];
+$electricity_price =$_POST['electricity_price'];
+
+
+
+$sql = "INSERT INTO electricity_connection (electricity_connection_provider, electricity_connection_details, electricity_price) VALUES ('$electricity_provider','$electricity_details','$electricity_price')";
+if (mysqli_query($conn, $sql)) {
+    echo "New water Connection Service has been added";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+}
+
+
 // LOGIN USER
 if (isset($_POST['login_user'])) {
   $username = $_POST['username'];
