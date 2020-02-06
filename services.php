@@ -17,29 +17,7 @@
 
 	
 	<!-- Navigation Bar -->
-	        <nav>
-			
-			
-			
-			<div class="button"> 
-				<a href= "" class="btn btn-two"> Sign In</a>
-			<a href= "registration.php" class="btn btn-two">Sign Up</a>
-	</div> 
-	<div id="logo">
-	<a href="index.html"> <img src="images/logo3.png" style="height:150px;"> </a>
-	</div>
-
-			
-				<ul>
-					<li > <a href = "index.html" id= "0" onClick= "nav_li_selected(0)"> Home </a> </li>
-					<li> <a href = "services.php" id= "1" onClick= "nav_li_selected(1)"> Services </a> </li>
-					<li> <a href = "feedback.html" id= "2" onClick= "nav_li_selected(2)">Feedback </a> </li>
-					
-					<li> <a href = "package.html" id= "3" onClick= "nav_li_selected(4)"> Package </a> </li>
-					<li> <a href = "about.html" id= "4" onClick= "nav_li_selected(4)"> About Us </a> </li>
-					<li > <a href = "contact.html" id= "5" onClick= "nav_li_selected(4)"> Contact Us</a> </li>
-									</ul>
-			</nav>
+	       <?php include("include/nav.inc") ?>
 	<!-- Navigation Bar ends -->
 	<div id="slider">
 	
@@ -47,7 +25,7 @@
 		<script>
 	var i = 0; // Start point
 	var images = [];
-	var time = 2500;
+	var time = 4000;
 
 	// Image List
 	images[0] = 'images/galary2.jpg';
@@ -87,40 +65,84 @@
 	 
 	<div class="services-container">
 	<div class="service-box"> 
-	<div class="serice-img">
-	<img src="images/services_kitchen.jpg" class="img-responsive" alt="img" title="img">
+	<div class="service-img">
+	<img src="images/kitchen.png" class="img-responsive" alt="img" title="img">
 	
 	</div>
-	<div class="service-title">Kitchen </div>
-
+	<div class="service-title"><a href = "kitchen_setup.php">Kitchen Setup </a></div>
+	<div class="service-desc">
+		
+		The Kitchen Service involves taking a client's brief then designing and managing the process of the delivery of a building. 
+		It can be a new building, housing project, alterations, or conservation of an existing restaurants.
+		Our service range includes a wide range of architectural designing service, commercial architecture designing service, green building design service, building.
+		
+	</div>
 	
 	</div>
+	
 	
 	
 	<div class="service-box"> 
-	<div class="serice-img">
-	<img src="images/galary2.jpg" class="img-responsive" alt="img" title="img">
+	<div class="service-img">
+	<img src="images/rest.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	
 	<div class="service-title">Restaurant Setup </div>
-	
+	<div class="service-desc">
+		
+		The Commercial Architectural Service involves taking a client's brief then designing and managing the process of the delivery of a building. 
+		It can be a new building, housing project, alterations, or conservation of an existing building.
+		Our service range includes a wide range of architectural designing service, commercial architecture designing service, green building design service, building.
+		
+	</div>
 	</div>
 	
 	
 	<div class="service-box"> 
-	<div class="serice-img">
-	<img src="images/galary2.jpg" class="img-responsive" alt="img" title="img">
+	<div class="service-img">
+	<img src="images/design.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	
-	<div class="service-title">Package </div>
-	
+	<div class="service-title">Design </div>
+	<div class="service-desc">
+		
+		The Commercial Architectural Service involves taking a client's brief then designing and managing the process of the delivery of a building. 
+		It can be a new building, housing project, alterations, or conservation of an existing building.
+		Our service range includes a wide range of architectural designing service, commercial architecture designing service, green building design service, building.
+		
+	</div>
 	
 	</div>
+	
+	<div class="service-box"> 
+	<div class="service-img">
+	<img src="images/gas.png" class="img-responsive" alt="img" title="img">
+	
+	</div>
+	
+	<div class="service-title">Legal Services </div>
+	<div class="service-desc">
+		
+		The Commercial Architectural Service involves taking a client's brief then designing and managing the process of the delivery of a building. 
+		It can be a new building, housing project, alterations, or conservation of an existing building.
+		Our service range includes a wide range of architectural designing service, commercial architecture designing service, green building design service, building.
+		
+	</div>
+	
+	</div>
+	
 	</div>
 	
 	</div>
 	
 	
 														<!--Services end-->
+		
+													<!-- footer --> 
+	<?php include("include/footer.inc") ?>
+	<!-- footer end -->
+    
+</body>
+</html>
