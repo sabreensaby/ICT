@@ -3,44 +3,23 @@
 <html>
 <head>
   <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="registration.css">
+  
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <div id="wrapper">
 	<!-- Navigation Bar -->
-	        <nav>
-			
-			
-			
-			<div class="button"> 
-				<a href= "login.php" class="btn btn-two"> Sign In</a>
-			<a href= "registration.php" class="btn btn-two">Sign Up</a>
-	</div> 
-	<div id="logo">
-	<a href="index.html"> <img src="images/logo3.png" style="height:150px;"> </a>
-	</div>
-
-			
-				<ul>
-					<li > <a href = "index.html" id= "0" onClick= "nav_li_selected(0)"> Home </a> </li>
-					<li> <a href = "services.html" id= "1" onClick= "nav_li_selected(1)"> Services </a> </li>
-					<li> <a href = "feedback.html" id= "2" onClick= "nav_li_selected(2)">Feedback </a> </li>
-					
-					<li> <a href = "package.html" id= "3" onClick= "nav_li_selected(4)"> Package </a> </li>
-					<li> <a href = "about.html" id= "4" onClick= "nav_li_selected(4)"> About Us </a> </li>
-					<li > <a href = "contact.html" id= "5" onClick= "nav_li_selected(4)"> Contact Us</a> </li>
-									</ul>
-			</nav>
-	<!-- Navigation Bar ends -->
+      <?php include("include/nav.inc") ?>
+<!-- Navigation Bar ends -->
+	
 	<div id="slider">
 	
 		
 		<script>
 	var i = 0; // Start point
 	var images = [];
-	var time = 2500;
+	var time = 4000;
 
 	// Image List
 	images[0] = 'images/galary2.jpg';
@@ -66,7 +45,7 @@
 
 </script>
 
-<img name="slide" width="99%" height="400px;">
+<img name="slide" width="99.9%" height="400px;">
 		</div>
 		
 		
@@ -79,36 +58,36 @@
 	 
 	
 	 
-	<div class="services-container">
+	<div class="services-container" style= "margin-left:18%; margin-bottom:5%;">
 	<div class="service-box1"> 
-	<div class="serice-img">
+	<div class="service-img">
 	<img src="images/kitchen staff.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
-	<div class="service-title"><a href = "show_kitchen_staff.php"> Menu Design </a> </div>
+	<div class="service-title"> Menu Design </a> </div>
 	
 	
 	</div>
 	
 	
 	<div class="service-box1"> 
-	<div class="serice-img">
-	<img src="images/kitchen equipment.jpg" class="img-responsive" alt="img" title="img" style= "height:198px;">
+	<div class="service-img">
+	<img src="images/kitchen equipment.jpg" class="img-responsive" alt="img" title="img" >
 	
 	</div>
 	
-	<div class="service-title"><a href = "kitchen_equipment.php"> Receipies Design </a> </div>
+	<div class="service-title">Receipies Design </a> </div>
 	
 	</div>
 	
 	
 	<div class="service-box1"> 
-	<div class="serice-img">
+	<div class="service-img">
 	<img src="images/kitchen services.jpg" class="img-responsive" alt="img" title="img">
 	
 	</div>
 	
-	<div class="service-title"><a href = "kitchen_services.php"> Interior Design </a> </div>
+	<div class="service-title"> Interior Design </a> </div>
 	
 	
 	

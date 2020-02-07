@@ -10,34 +10,11 @@
 
 <div id="wrapper">
 	<!-- Navigation Bar -->
-	        <nav>
-			
-			
-			
-			<div class="button"> 
-				<a href= "login.php" class="btn btn-two"> Sign In</a>
-			<a href= "registration.php" class="btn btn-two">Sign Up</a>
-	</div> 
-	<div id="logo">
-	<a href="index.html"> <img src="images/logo3.png" style="height:150px;"> </a>
-	</div>
-
-			
-				<ul>
-					<li > <a href = "index.html" id= "0" onClick= "nav_li_selected(0)"> Home </a> </li>
-					<li> <a href = "services.html" id= "1" onClick= "nav_li_selected(1)"> Services </a> </li>
-					<li> <a href = "feedback.html" id= "2" onClick= "nav_li_selected(2)">Feedback </a> </li>
-					
-					<li> <a href = "package.html" id= "3" onClick= "nav_li_selected(4)"> Package </a> </li>
-					<li> <a href = "about.html" id= "4" onClick= "nav_li_selected(4)"> About Us </a> </li>
-					<li > <a href = "contact.html" id= "5" onClick= "nav_li_selected(4)"> Contact Us</a> </li>
-									</ul>
-			</nav>
-	<!-- Navigation Bar ends -->
-<div class="background_image"><img src = "images/background_image.jpg"  alt="img" title="img" style= "height:50%;width:100%; opacity:0.3;z-index:-1;">
-
+	       <?php include("include/nav.inc") ?>
+															<!-- Navigation Bar ends -->
+<div class="admin_service" style="margin-left:40%; margin-bottom:3%; margin-top:2%;">
 <h2>Add Water Connection </h2>
-	
+	</div>
  </div>
 
 <form action="#" method="post">

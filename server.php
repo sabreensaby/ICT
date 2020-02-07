@@ -4,8 +4,8 @@ session_start();
 $name = $email = $contact = $dateOfBirth = $user = $password_1 = $password_2 = $address =  "";
 $errors = array(); 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "ictatjcu_cons2";
+$password = "123zxc";
 $db = "ictatjcu_cons2";
 
 
@@ -19,7 +19,7 @@ if (!$conn) {
 }
 
 if (isset($_POST['reg_user'])) {
-    
+	
 $name = $_POST['name'];
 $email =$_POST['email'];
 $contact =$_POST['contact'];
@@ -29,24 +29,36 @@ $password_1 =$_POST['password1'];
 $password_2 =$_POST['password2'];
 $address =$_POST['address'];
 if ($password_1 != $password_2) {
-    die ("password do not match");
+	die ("password do not match");
   }
 
-$exist = mysqli_query($conn, "SELECT * FROM user WHERE username='".$user."' OR email='".$email."'");
 
-if(mysqli_num_rows($exist) > 0){
-    die("user already exists");
-}
-else 
-    $encryptpassword = md5($password_1);
+	$encryptpassword = md5($password_1);
 $sql = "INSERT INTO user (name, email, contactno,dob, username, password, address) VALUES ('$name','$email','$contact','$dateOfBirth','$user','$encryptpassword','$address')";
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
+	
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);
+}
+
+
+// LOGIN USER
+if (isset($_POST['login_user'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+$query = mysqli_query($conn, "SELECT * FROM user WHERE username='".$user."' AND email='".$email."'");
+
+if(mysqli_num_rows($query) == 1){
+    echo "logged in";
+}else{
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
 }
 //KITCHEN STAFF
 
@@ -196,13 +208,13 @@ mysqli_close($conn);
 
 if (isset($_POST['ok_receipie'])) {
     
-$receipies_type = $_POST['receipies_type'];
+$receipie_type = $_POST['Receipie_type'];
 $receipie_details = $_POST['receipie_details'];
 $receipie_price =$_POST['receipie_price'];
 
 
 
-$sql = "INSERT INTO receipie_design (receipie_type, receipie_details, receipie_price) VALUES ('$receipie_type','receipie_details','$receipie_price')";
+$sql = "INSERT INTO receipie_design (receipie_type, receipie_details, receipie_price) VALUES ('$receipie_type','$receipie_details','$receipie_price')";
 if (mysqli_query($conn, $sql)) {
     echo "New recceipies has been added";
 } else {
@@ -216,13 +228,13 @@ mysqli_close($conn);
 
 if (isset($_POST['ok_interior'])) {
     
-$interior_type = $_POST['interior_type'];
+$interior_type = $_POST['Interior_Design_type'];
 $interior_details = $_POST['interior_details'];
 $interior_price =$_POST['interior_price'];
 
 
 
-$sql = "INSERT INTO interior_design (interior_type, interior_details, interior_price) VALUES ('$interior_type','interior_details','$interior_price')";
+$sql = "INSERT INTO interior_design (interior_type, interior_details, interior_price) VALUES ('$interior_type','$interior_details','$interior_price')";
 if (mysqli_query($conn, $sql)) {
     echo "New interior has been added";
 } else {
@@ -232,22 +244,46 @@ if (mysqli_query($conn, $sql)) {
 mysqli_close($conn);
 }
 
+//Package
+
+if (isset($_POST['ok_package'])) {
+    
+$package_name = $_POST['package_name'];
+$package_desc = $_POST['package_desc'];
+$package_price =$_POST['package_price'];
 
 
-// LOGIN USER
-if (isset($_POST['login_user'])) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
 
-$query = mysqli_query($conn, "SELECT * FROM user WHERE username='".$user."' AND email='".$email."'");
-
-if(mysqli_num_rows($query) == 1){
-    echo "logged in";
-}else{
+$sql = "INSERT INTO package (package_name, package_desc, package_price) VALUES ('$package_name','$package_desc','$package_price')";
+if (mysqli_query($conn, $sql)) {
+    echo "New Package has been added";
+} else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+mysqli_close($conn);
 }
+
+//Add contact details
+
+if (isset($_POST['send_message'])) {
+    
+$contact_name = $_POST['contact_name'];
+$contact_email = $_POST['contact_email'];
+$contact_subject =$_POST['contact_subject'];
+$contact_message =$_POST['contact_message'];
+
+
+
+$sql = "INSERT INTO contact (name, email, contact_reason, comments) VALUES ('$contact_name','$contact_email','$contact_subject','$contact_message')";
+if (mysqli_query($conn, $sql)) {
+    echo "New contact has enquired.";
+} 
+mysqli_close($conn);
+
+
+
+
 
 // SHOW KITCHEN STAFF
 $sql = "SELECT name, email, role, skills,years_of_experience,additional_details  FROM kitchen_staff";
@@ -255,6 +291,33 @@ $result = mysqli_query($conn, $sql);
 
 
 
-mysqli_close($conn);
 
+// SHOW PACKAGE
+$sql = "SELECT package_name, package_desc, package_price  FROM package";
+$result = mysqli_query($conn, $sql);
+
+
+
+// SHOW KITCHEN EQUIPMENT
+/*$sql = "SELECT equipment_type, quality, details, price FROM kitchen_equipment";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+	?>
+	<div class="equipment_container" style="margin-left:280px;margin-right:280px;">
+	<div style="height:200px;width:200px;float:left;background-color:pink;padding:10px;margin:50px;"> 
+	<?php echo $row["equipment_type"]."<br>".$row["quality"]."<br>".$row["details"].$row["price"] 
+	?> 
+	</div> 
+	</div>
+       
+   <?php }
+} else {
+    echo "0 results";
+}*/
+
+
+
+}
 ?>

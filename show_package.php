@@ -1,47 +1,52 @@
+
+
 <html>
 <head>
   <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="registration.css">
+  
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <div id="wrapper">
 	<!-- Navigation Bar -->
-	       <?php include("include/nav.inc") ?>
-															<!-- Navigation Bar ends -->
-		<h1 style="text-align:center">STAFF</h1>
+      <?php include("include/nav.inc") ?>
+<!-- Navigation Bar ends -->
+		<h1 style="text-align:center">PACKAGES</h1>
 		
 <?php 
 include('server.php');
-$sql = "SELECT name, email, role, skills,years_of_experience,additional_details  FROM kitchen_staff";
+$sql = "SELECT package_name, package_desc, package_price  FROM package";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_array($result)) {
 	?>
+	
 	
 	
 	<table>
 <tr>
-<th>STAFF NAME </th>
-<th> EMAIL </th> 
-<th> ROLE</th>
+<th>PACKAGE NAME </th>
+<th> PACKAGE DESCRIPTION </th> 
+<th> PACKAGE PRICE</th>
 <th>MORE ACTION</th>
 </tr>
 
 <tr>
 
-<td> <?php echo $row["name"]?></td>
-<td> <?php echo $row["email"]?></td>
-<td> <?php echo $row["skills"]?></td>
+<td> <?php echo $row["package_name"]?></td>
+<td> <?php echo $row["package_desc"]?></td>
+<td> <?php echo $row["package_price"]?></td>
 <td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
 </tr>
 
 </table>
-
 	
-   <?php }
+
+
+       
+<?php } 
 } else {
     echo "0 results";
 }

@@ -1,3 +1,4 @@
+<?php include 'server.php'?>
 <!doctype html>
 <html>
 <head>
@@ -29,15 +30,15 @@
         <h1>Contact us now!</h1>
         <p>You can contact us using the contact form below.</p>
 		<div class="cont_form">
-              <form action="contactus.php" method="post" >
+              <form action="contact.php" method="post" >
 			  <div class="inputgroup">
-                    <p><input type="text" name="name" placeholder="Your Name*" class="cform-text" size="40" title="Your name" required="required"></p>
+                    <p><input type="text" name="contact_name" placeholder="Your Name*" class="cform-text" size="40" title="Your name" required="required"></p>
 					</div>
 					<div class="inputgroup">
-                    <p><input type="email" name="email" placeholder="Your Email*" class="cform-text" size="40" title="Your email" required="required"></p>
+                    <p><input type="email" name="contact_email" placeholder="Your Email*" class="cform-text" size="40" title="Your email" required="required"></p>
 					</div>
 					<div class="inputgroup">
-                    <p><select name="subject">
+                    <p><select name="contact_subject">
                           <option value="Support">Support</option>
                           <option value="Question">Question</option>
                           <option value="Report a Bug">Report a Bug</option>
@@ -45,9 +46,9 @@
                     </p>
 					</div>
                     <div class="inputgroup">
-                    <p><textarea name="message" cols="37" rows="10" title="Drop us a line." placeholder="Your comment here" required="required"></textarea></p>
+                    <p><textarea name="contact_message" cols="37" rows="10" title="Drop us a line." placeholder="Your comment here" required="required"></textarea></p>
 					</div>
-                    <button type="submit" class="btnform" name="reg_user">Send Message</button>
+                    <button type="submit" class="btnform" name="send_message">Send Message</button>
               </form></div>
     </div>
  <div id ="contact">

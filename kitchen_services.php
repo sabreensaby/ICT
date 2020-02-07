@@ -12,10 +12,10 @@
 	<!-- Navigation Bar -->
 	        <?php include("include/nav.inc") ?>
 	<!-- Navigation Bar ends -->
-<div class="background_image"><img src = "images/background_image.jpg"  alt="img" title="img" style= "height:50%;width:100%; opacity:0.3;z-index:-1;">
+<div class="admin_service" style="margin-left:40%; margin-bottom:3%; margin-top:2%;">
 
 <h2>Add Kitchen Service</h2>
-	
+	</div>
  </div>
 
 <form action="#" method="post">
