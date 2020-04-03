@@ -28,10 +28,10 @@
 	var time = 4000;
 
 	// Image List
-	images[0] = 'images/slide3.jpg';
-	images[1] = 'images/slide6.jpg';
-	images[2] = 'images/slide1.jpg';
-	images[3] = 'images/slide7.jpg';
+	images[0] = 'images/galary2.jpg';
+	images[1] = 'images/galary3.jpg';
+	images[2] = 'images/galary5.jpg';
+	images[3] = 'images/galary6.jpg';
 	
 
 	// Change Image
@@ -51,9 +51,9 @@
 
 </script>
 <div class= "text" >
-<img name="slide" width="99.9%" height="500px;">
+<img name="slide">
 <h2> "Build Your Own Dream Restaurant, We are here to help you for your turn-key projects." </h2>
-		</div>
+</div>
 		
 
 </div>
@@ -63,58 +63,41 @@
 <!-- Services start-->
 
 <div class="services">
-<h1 class="section-title">Services </h1>
+	<div class="container">
+		<h1 class="section-title">Services </h1>
+		<div class="services-container">
+			<div class="service-box"> 
+				<div class="serice-img"> 
+					<img src="images/kitchen.png" class="img-responsive" alt="img" title="img"> 
+	
+				</div>
+				<div class="service-title"> Kitchen Setup</div>
+				<div class="service-desc">
+					The Kitchen Service provides services like kitchen staff, kitchen equipments and different kitchen services
+				</div>
+			</div>
+			<div class="service-box"> 
+				<div class="serice-img">
+					<img src="images/rest.jpg" class="img-responsive" alt="img" title="img">
+				</div>
+				<div class="service-title">Restaurant Setup </div>
+				<div class="service-desc">
+					Restaurant Setup provides different services for connections like water connection, gas connection and electricity connection.
 
+				</div>
+			</div>
+			<div class="service-box"> 
+				<div class="serice-img">
+					<img src="images/design.jpg" class="img-responsive" alt="img" title="img">
+				</div>
+				<div class="service-title">Deals</div>
+				<div class="service-desc">
+				Design services mainly provide services like Menu design, receipies design and interior design of the restaurant.
 
-
-<div class="services-container">
-<div class="service-box">
-<div class="service-img">
-<img src="images/kitchen.png" class="img-responsive" alt="img" title="img" >
-
-</div>
-<div class="service-title"><a href = "kitchen_setup.php">Kitchen Setup </a> </div>
-<div class="service-desc">
-
-The Kitchen Service provides services like kitchen staff, kitchen equipments and different kitchen services
-
-</div>
-
-</div>
-
-
-<div class="service-box">
-<div class="service-img">
-<img src="images/rest.jpg" class="img-responsive" alt="img" title="img">
-
-</div>
-
-<div class="service-title">Restaurant Setup </div>
-<div class="service-desc" style="color:black;">
-
-Restaurant Setup provides different services for connections like water connection, gas connection and electricity connection.
-
-</div>
-</div>
-
-
-<div class="service-box" style="color:black;">
-<div class="service-img">
-<img src="images/design.jpg" class="img-responsive" alt="img" title="img">
-
-</div>
-
-<div class="service-title" style="color:black;">Design </div>
-<div class="service-desc" style="color:black;">
-
-Design services mainly provide services like Menu design, receipies design and interior design of the restaurant.
-
-</div>
-
-</div>
-
-
-
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
@@ -132,25 +115,28 @@ Design services mainly provide services like Menu design, receipies design and i
 <!-- Success stories-->
 
 <div id="stories">
-<h1 class="section-title">our stories </h1>
-
-<div id="story">
-
-<div class="space">  <img src="images/galary3.jpg" class="img-res">CheeseDaddy<hr>
- 
-
-<div class="story-desc"> Best Consultants to work with!
-</div></div>
-
-
-<div class="space"> <img src="images/galary2.jpg" class="img-res">Aquenos<hr>
- <div class="story-desc"> Appreciate your help and services. It worked really good for our restaurant.
-</div> </div>
-<div class="space"><img src="images/galary4.jpg" class="img-res"> Foodies<hr>
-<div class="story-desc"> Thanks for all the solutions and services. Kudos to you and your team!
-</div></div>
-
-</div>
+	<div class="container">
+	
+		<h1 class="section-title">our stories </h1>
+	<div id="story"> 
+			<div class="space">  
+				  <img src="images/galary3.jpg" class="img-res">CheeseDaddy<hr>
+				
+				 <div class="story-desc"> Best Consultants to work with!</div>
+			</div>
+			
+			<div class="space"> 
+				<img src="images/galary2.jpg" class="img-res">Aquenos<hr>
+			 	<div class="story-desc"> Appreciate your help and services. It worked really good for our restaurant
+				</div> 
+			</div> 
+			
+			<div class="space"><img src="images/galary4.jpg" class="img-res"> Foodies<hr>
+				<div class="story-desc"> Thanks for all the solutions and services. Kudos to you and your team!
+				</div>
+			</div>
+	</div>
+	</div>
 </div>
 <!-- Success stories end-->
 

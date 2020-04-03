@@ -7,15 +7,15 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="log" >
+<?php include("include/nav.inc") ?>
+
+<div class="custitle">
   <div class="header">
-  <!-- Navigation Bar -->
-	       <?php include("include/nav.inc") ?>
-															<!-- Navigation Bar ends -->
-  	<h2 style="text-align:center; margin-left:15%;">Login</h2>
+  	<h2 style="text-align:center;background-color: #000;">Login</h2>
   </div>
-	 
-  <form method="post" action="index.php" style="margin-bottom:9%;">
+</div> 
+<div class="cusregForms">
+  <form method="post" action="index.php" >
 
   	<div class="input-group">
   		<label>Username</label>
@@ -25,16 +25,16 @@
   		<label>Password</label>
   		<input type="password" name="password" required>
   	</div>
-  	<div class="input-group">
+  	<div class="input-group loginbts">
   		<button type="submit" class="btn_form" name="login_user">Login</button>
 		<button type="submit" class="btn_form" name="login_user">Cancel</button>
   	</div>
   	<p>
   		Not yet a member? <a href="registration.php">Sign up</a> <br>
-  		Are you an admin? <a href="admin_area.php">Click Here!</a>
+  		Are you an admin? <a href="admin_login.php">Click Here!</a>
   	</p>
   </form>
-  </div>
+</div> 
   <!-- Footer -->
 	       <?php include("include/footer.inc") ?>
 															<!-- Footer -->
