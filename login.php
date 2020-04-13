@@ -11,7 +11,7 @@
 
 <div class="custitle">
   <div class="header">
-  	<h2 style="text-align:center;background-color: #000;">Login</h2>
+  	<h2>Login</h2>
   </div>
 </div> 
 <div class="cusregForms">
@@ -31,7 +31,7 @@
   	</div>
   	<p>
   		Not yet a member? <a href="registration.php">Sign up</a> <br>
-  		Are you an admin? <a href="admin_login.php">Click Here!</a>
+  		Are you an admin? <a href="admin_area.php">Click Here!</a>
   	</p>
   </form>
 </div> 

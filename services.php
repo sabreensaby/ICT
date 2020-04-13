@@ -19,99 +19,61 @@
 	<!-- Navigation Bar -->
       <?php include("include/nav.inc") ?>
 <!-- Navigation Bar ends -->
-	<div id="slider">
-	
-		
-		<script>
-	var i = 0; // Start point
-	var images = [];
-	var time = 4000;
-
-	// Image List
-	images[0] = 'images/slide1.jpg';
-	images[1] = 'images/slide2.jpg';
-	images[2] = 'images/slide3.jpg';
-	images[3] = 'images/slide4.jpg';
-	
-
-	// Change Image
-	function changeImg(){
-		document.slide.src = images[i];
-
-		if(i < images.length - 1){
-			i++;
-		} else {
-			i = 0;
-		}
-
-		setTimeout("changeImg()", time);
-	}
-
-	window.onload = changeImg;
-
-</script>
-
-<img name="slide" width="99.9%" height="500px;">
-		</div>
+<section id="newSlider" class="lazy slider" data-sizes="50vw">
+    <div class="sliderImg kitchenSetimg" style="background-image: url(./images/kitchenSetup.jpg);background-size: cover;">
+    	<div class="slideText">
+    		<h2>Our Services</h2>
+    		<p>Where will your Business be this 
+    		time next year?</p>
+    	</div>
+    </div>
+</section>
 		
 		
 		
 	<!-- Services start-->
 
 <div class="services">
-<h1 class="section-title">Services </h1>
+	<div class="container">
+		<div class="heading">
+			<h2 class="section-title">Our Services</h2>
+			<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+		</div>
+		<div class="services-container">
+			<a href="#" class="service-box col-4"> 
+				<div class="serice-img">
+					<img src="images/ser_1.png" class="img-responsive" alt="img" title="img">
+				</div>
+				<div class="service-title">Kitchen Setup</div>
+				<div class="service-desc">
+				The Kitchen Service provides services like kitchen staff, kitchen equipments and different kitchen services
+				</div>
+			</a>
+			<a href="#" class="service-box col-4"> 
+				<div class="serice-img">
+					<img src="images/ser_2.png" class="img-responsive" alt="img" title="img">
+				</div>
+				<div class="service-title">Restaurant Setup </div>
+				<div class="service-desc">
+				Restaurant Setup provides different services for connections like water connection, gas connection and electricity connection.
+				</div>
+			</a>
+			<a href="#" class="service-box col-4"> 
+				<div class="serice-img">
+					<img src="images/ser_1.png" class="img-responsive" alt="img" title="img">
+				</div>
+				<div class="service-title">Design Setup </div>
+				<div class="service-desc">
+			Design services mainly provide services like Menu design, receipies design and interior design of the restaurant.
 
-
-
-<div class="services-container">
-<div class="service-box">
-<div class="service-img">
-<img src="images/kitchen.png" class="img-responsive" alt="img" title="img" >
-
-</div>
-<div class="service-title"><a href = "kitchen_setup.php">Kitchen Setup </a> </div>
-<div class="service-desc">
-
-The Kitchen Service provides services like kitchen staff, kitchen equipments and different kitchen services
-
-</div>
-
-</div>
-
-
-<div class="service-box">
-<div class="service-img">
-<img src="images/rest.jpg" class="img-responsive" alt="img" title="img">
-
-</div>
-
-<div class="service-title">Restaurant Setup </div>
-<div class="service-desc" style="color:black;">
-
-Restaurant Setup provides different services for connections like water connection, gas connection and electricity connection.
-
-</div>
-</div>
-
-
-<div class="service-box" style="color:black;">
-<div class="service-img">
-<img src="images/design.jpg" class="img-responsive" alt="img" title="img">
-
-</div>
-
-<div class="service-title" style="color:black;">Design </div>
-<div class="service-desc" style="color:black;">
-
-Design services mainly provide services like Menu design, receipies design and interior design of the restaurant.
-
-</div>
-
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
 
 
 
-</div>
 
 
 <!--Services end-->

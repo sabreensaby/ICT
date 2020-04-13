@@ -1,22 +1,194 @@
 <?php
+ob_start();
 session_start();
 
 $name = $email = $contact = $dateOfBirth = $user = $password_1 = $password_2 = $address =  "";
 $errors = array(); 
+
 $servername = "localhost";
-$username = "ictatjcu_cons2";
-$password = "123zxc";
+$username = "root";
+$password = "";
 $db = "ictatjcu_cons2";
 
-
+define('SITE_URL', 'http://localhost/ict/');
+define('ADMIN_LOGIN_URL', 'http://localhost/ict/server.php?action=admin_login');
+define('ADMIN_ACTION_URL', 'http://localhost/ict/server.php');
 
 // Create connection
+global $conn;
 $conn = mysqli_connect($servername, $username, $password, $db);
 
-// Check connection
+
+// Check connectionlogin_err
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+$error_msg = "";
+$err = [
+        'login_err'=>'Please check username or password that you enter.',
+        ''
+        ];
+if (isset($_REQUEST['login_err'])) {
+    $error_msg = $err['login_err'];
+}
+
+if (isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
+
+    $action = $_REQUEST['action'];
+    $post_data = $_REQUEST;
+    switch ($action) {
+        case 'admin_login':
+            admin_login($post_data);
+            break;
+        
+        case 'add_edit_service_cat':
+            add_edit_service_cat($post_data);
+            break;
+        
+        case 'delete_service_category':
+            delete_service_category($post_data);
+            break;
+        case 'delete_service_type':
+            delete_service_type($post_data);
+            break;
+
+        case 'add_edit_service_type':
+            add_edit_service_types($post_data);
+            break;
+
+         case 'logout':
+            do_logout();
+            break;
+
+            
+
+            
+            
+            
+        default:
+            # code...
+            break;
+    }
+
+}
+
+function do_logout(){
+    unset($_SESSION['id']);
+    unset($_SESSION['username']);
+    unset($_SESSION['email']);
+    header("location:index.php");
+
+}
+
+function admin_login($post_data) {
+    global $conn;
+    $username = $post_data['username'];
+    $password = $post_data['password'];
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE username='". $username. "' AND password = '". $password."'");
+
+    if(mysqli_num_rows($query) > 0){
+        $row = mysqli_fetch_array($query);
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['id'] = $row['id'];  //user id
+        $_SESSION['username'] = $row['username'];  //user id
+        header("location:admin/index.php");
+
+    }else{
+        header("location:admin_login.php?login_err=0");
+    }
+}
+
+function add_edit_service_cat($post_data){
+    global $conn;
+    $table = "services_cat";
+
+    if($post_data['service_id'] > 0) {
+        echo "UPDATE " . $table . " set service_cat = '".$post_data['service_cat']."'
+                                        WHERE id =". $post_data['service_id'].")";
+        $query = mysqli_query($conn, "UPDATE " . $table . " set service_cat = 
+                                                            '".$post_data['service_cat']."'
+                                        WHERE id =". $post_data['service_id']);
+
+    } else{
+        $query = mysqli_query($conn, "INSERT INTO " . $table . " (service_cat) values ('" . $post_data['service_cat'] . "')");
+    }
+
+    header("location:admin/index.php?content=service_category");
+
+}
+
+
+function print_service_category($id=null) {
+    global $conn;
+    $table = "services_cat";
+    $query = "SELECT * FROM " . $table;
+    if($id){
+        $query .= " WHERE id =".$id;
+    }
+    $query .= " order by id DESC";
+    $query = mysqli_query($conn, $query);
+    return  mysqli_fetch_all($query, MYSQLI_ASSOC);
+}
+
+function delete_service_category($post_data){
+    global $conn;
+    
+    mysqli_query($conn, "DELETE from services_cat where id =".$post_data['id']);
+    header("location:admin/index.php?content=service_category");
+}
+
+
+function delete_service_type($post_data)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE from services_types where id =" . $post_data['id']);
+    header("location:admin/index.php?content=service_types");
+}
+
+
+function add_edit_service_types($post_data)
+{
+    global $conn;
+    $table = "services_types";
+    if ($post_data['service_id'] > 0) {
+        $query = mysqli_query($conn, "UPDATE ".$table." 
+                                     set service_type= '".$post_data['service_cat']."',
+                                    service_id= '".$post_data['service_category_lists']."'
+                                    WHERE id = ".$post_data['service_id']
+                            );
+    } else {
+        $query = mysqli_query($conn, "INSERT INTO " . $table . "(service_id,service_type) values ('".$post_data['service_category_lists']."','".$post_data['service_cat']."')");
+    }
+    header("location:admin/index.php?content=service_types");
+}
+
+
+function print_service_types($id = null)
+{
+    global $conn;
+    $table = "services_types";
+    $query = "SELECT sc.service_cat ,st.* FROM " . $table. " st, services_cat sc";
+    
+    $query .= " WHERE st.service_id = sc.id ";
+
+    if ($id) {
+        $query .= "AND st.id =" . $id;
+    }
+
+    $query .= " order by st.id DESC";
+    $query = mysqli_query($conn, $query);
+    return  mysqli_fetch_all($query, MYSQLI_ASSOC);
+}
+
+
+
+
+
+
+
+
+
 
 if (isset($_POST['reg_user'])) {
 	
@@ -36,7 +208,7 @@ if ($password_1 != $password_2) {
 	$encryptpassword = md5($password_1);
 $sql = "INSERT INTO user (name, email, contactno,dob, username, password, address) VALUES ('$name','$email','$contact','$dateOfBirth','$user','$encryptpassword','$address')";
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    //echo "New record created successfully";
 	
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -46,20 +218,20 @@ mysqli_close($conn);
 }
 
 
-// LOGIN USER
-if (isset($_POST['login_user'])) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+// // LOGIN USER
+// if (isset($_POST['login_user'])) {
+//   $username = $_POST['username'];
+//   $password = $_POST['password'];
 
-$query = mysqli_query($conn, "SELECT * FROM user WHERE username='".$user."' AND email='".$email."'");
+// $query = mysqli_query($conn, "SELECT * FROM user WHERE username='".$user."' AND email='".$email."'");
 
-if(mysqli_num_rows($query) == 1){
-    echo "logged in";
-}else{
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+// if(mysqli_num_rows($query) == 1){
+//     echo "logged in";
+// }else{
+//     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// }
 
-}
+// }
 //KITCHEN STAFF
 
 if (isset($_POST['ok_staff'])) {

@@ -1,7 +1,7 @@
-* {
+/** {
   margin: 0px;
   padding: 0px;
-}
+}*/
 .header{
   width: 30%;
   margin: 50px auto 0px;
@@ -10,34 +10,33 @@
   text-align: center;
   border: 1px solid black;
   border-bottom: none;
-  border-radius: 5px;
   padding: 20px;
 }
 
-body {
+/*body {
   font-size: 100%;
   background: #F8F8FF;
-}
+}*/
 
-form, .content {
+/*form, .content {
   width: 30%;
   margin: 0px auto;
   padding: 20px;
   border: 1px solid #B0C4DE;
   background: #eaeaea;
   border-radius: 0px 0px 10px 10px;
-}
-.input-group {
+}*/
+/*.input-group {
   margin: 10px 0px 10px 0px;
-}
-.input-group label {
+}*/
+/*.input-group label {
   display: block;
   text-align: left;
   margin: 3px;
   font-weight: bold;
   font-family: 'PT Sans','sans-serif';
-}
-.input-group input {
+}*/
+/*.input-group input {
   height: 25px;
   width: 93%;
   background-color: #ecf9fe;
@@ -49,7 +48,7 @@ form, .content {
     font-weight: 400;
     outline: medium none;
     padding: 7px;
-}
+}*/
 
 .error {
   width: 92%; 
