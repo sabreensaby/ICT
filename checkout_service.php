@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('server.php'); ?>
 <?php 
 	$first_name = "";
 	$last_name = "";
@@ -39,11 +39,11 @@
             <section class="full internal-page checkOut section">
                 <div class="container">
                     <div class="heading">
-                        <h2 class="section-title">Checkout</h2>
+                        <h1 class="section-title">Checkout</h1>
                     </div>
 						<div class="ffdd" style="width: 100%;float: left;">
 					<div class="row">
-						<form action="<?php echo ADMIN_ACTION_URL?>?action=place_order" method="post">
+						<form action="<?php echo ADMIN_ACTION_URL?>?action=purchase_service" method="post">
 						<div class="row">
 							<div class="col-8">
 								<div class="billing_info">
@@ -100,22 +100,22 @@
 							<div class="col-4">
 								<div class="coTotal">
 									<?php 
-										$cart_items = print_cart_items();
+										$cart_items = print_purchases_service();
 										$cart_count = count($cart_items);
 									?>
-									<h4>Cart <span class="price"><i class="fa fa-shopping-cart"></i> 
+									<h4>Service <span class="price"><i class="fa fa-shopping-cart"></i> 
 										<b><?php echo $cart_count;?></b></span>
 									</h4>
-									<?php $total_amt = 0; foreach ($cart_items as $cart) { ?>
+									<?php $total_price= $total_amt = 0; foreach ($cart_items as $cart) { ?>
 									<?php
-										$total_price = $cart["price"]*$cart["qty"]; 
-										$total_amt = $total_amt+$total_price;
+										$total_price = $cart["price"];
 										
 									?>
-									<p><a href="item-detail.php?id=<?php echo $cart["item_id"]?>"><?php echo $cart["product_name"]?></a> <span class="price">₹ <?php echo $cart["qty"]?>x<?php echo $cart["price"]?></span></p>
+									<p><a href="item-detail.php?id=<?php echo $cart["item_id"]?>"><?php echo $cart["staff_role"]?></a> <span class="price">₹ <?php echo $cart["price"]?></span></p>
+									<p><?php echo $cart["descriptions"]?></p>
 									<?php } ?>
 									<hr>
-									<p class="lastTotal">Total <span class="price" style="color:black"><b>₹ <?php echo $total_amt; ?></b></span></p>
+									<p class="lastTotal">Total <span class="price" style="color:black"><b>₹  <?php echo $total_price; ?></b></span></p>
 								</div>
 								
 							</div>
@@ -123,7 +123,7 @@
 							
 
 
-							<input type="hidden" name="amount" value="<?php echo $total_amt;?>">
+							<input type="hidden" name="amount" value="<?php echo $total_price;?>">
 						</form>
 
                     </div>

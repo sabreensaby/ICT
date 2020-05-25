@@ -1,107 +1,81 @@
-<?php include('server.php') ?>
-<!DOCTYPE html>
+<?php include('server.php'); ?>
+
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Cart</title>
+	<?php require_once 'include/header_css.php'; ?>
 </head>
+<style type="text/css">
+.cartservice td, th{width: auto !important;float: none;}
+</style>
 <body>
 
-<div id="wrapper">
-	<!-- Navigation Bar -->
-      <?php include("include/nav.inc") ?>
-<!-- Navigation Bar ends -->
+	<div id="wrapper">
+		<!-- Navigation Bar -->
+		<?php include("include/nav.inc"); ?>
 
-		
-<section class="full internal-page section">
-	<div class="container">
-    <div class="heading">
-      <h2 class="section-title">Shopping Cart</h2>
-    </div>
+		<div class="services cartservice">
+			<div class="container">
+				<div class="heading">
+					<h2 class="section-title">CART</h2>
+					<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+				</div>
+				<table class="table">
+					<tr>
+						<th></th>
+						<th>Product</th> 
+						<th>Price</th>
+						<th>Qty</th>
+						<th>Total</th>
+						<th></th>
+					</tr>
+			
+					<?php 
+						$total_amt = 0;
+						$cart_items = print_cart_items();
+						if (count($cart_items) > 0) {
+							// output data of each row
+							foreach ($cart_items as $cart) {
+								$path = "images/".$cart["img_name"];
+								$total_price = $cart["price"]*$cart["qty"]; 
 
-<div class="shopping-cart">
+								$total_amt = $total_amt+$total_price;
+								
+								?>
+								<tr>
 
-  <div class="column-labels">
-    <label class="product-image">Image</label>
-    <label class="product-details">Product</label>
-    <label class="product-price">Price</label>
-    <label class="product-quantity">Quantity</label>
-    <label class="product-removal">Remove</label>
-    <label class="product-line-price">Total</label>
-  </div>
+									<td><img src="<?php echo $path; ?>" class="img" width="80"></td>						
+									<td><?php echo $cart["product_name"]?></td>
+									<td>₹ <?php echo $cart["price"]?></td>
 
-  <div class="product">
-    <div class="product-image">
-      <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-    </div>
-    <div class="product-details">
-      <div class="product-title">Dingo Dog Bones</div>
-    </div>
-    <div class="product-price">12.99</div>
-    <div class="product-quantity">
-      <input type="number" value="2" min="1">
-    </div>
-    <div class="product-removal">
-      <button class="remove-product">
-        Remove
-      </button>
-    </div>
-    <div class="product-line-price">25.98</div>
-  </div>
+									<td><?php echo $cart["qty"]?></td>
+									<td>₹ <?php echo $total_price;?></td>
+									
+									
+									<td><a href="<?php echo ADMIN_ACTION_URL;?>?action=remove_item&id=<?php echo $cart["id"]; ?>" class="btn btn-danger">Delete</a></td>
+									
+								</tr>
 
-  <div class="product">
-    <div class="product-image">
-      <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-    </div>
-    <div class="product-details">
-      <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-    </div>
-    <div class="product-price">45.99</div>
-    <div class="product-quantity">
-      <input type="number" value="1" min="1">
-    </div>
-    <div class="product-removal">
-      <button class="remove-product">
-        Remove
-      </button>
-    </div>
-    <div class="product-line-price">45.99</div>
-  </div>
+							<?php } 
+						}
+					?> 
+						<tr>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th>Total</th>
+							<th>₹ <?php echo $total_amt; ?></th>
+							<th></th>
+						</tr> 
 
-  <div class="totals">
-    <div class="totals-item">
-      <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">71.97</div>
-    </div>
-    <div class="totals-item">
-      <label>Tax (5%)</label>
-      <div class="totals-value" id="cart-tax">3.60</div>
-    </div>
-    <div class="totals-item">
-      <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">15.00</div>
-    </div>
-    <div class="totals-item totals-item-total">
-      <label>Grand Total</label>
-      <div class="totals-value" id="cart-total">90.57</div>
-    </div>
-  </div>
-      <div class="cartButton">
-      <button class="checkout">Checkout</button>
-    </div>
-</div>
+				</table>
+				<div>
+					<a href="checkout.php" class="btn btn-success btn-lg">Checkout</a>
+				</div>
+			</div>
+		</div>
 	</div>
-</section>	
-<!-- Kitchen SetUp start-->
-
-
-</div>
-	<!-- footer end -->
-   <?php include("include/footer.inc") ?> 
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--Services end-->
+<?php include("include/footer.inc") ?>
 </body>
 </html>

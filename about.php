@@ -1,11 +1,11 @@
+<?php include('server.php'); ?>
 <!doctype html>
 <html>
 <head>
 
-<title> Consultation </title>
+<title> About </title>
+<?php require_once 'include/header_css.php'; ?>
 
-<link href="style.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 	<div id="wrapper">
@@ -75,9 +75,9 @@
 						<img class="img-res" src="images/blog_1.jpg">
 					</a>
 				</div> 
-				<h3>CheeseDaddy</h3>
+				<h3>XYZ Company</h3>
 				 <div class="story-desc"> 
-					Best Consultants to work with!
+				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
 				</div>
 			</div>
 			<div class="space col-4"> 
@@ -86,10 +86,10 @@
 						<img class="img-res" src="images/blog_2.jpg">
 					</a>
 				</div> 
-				<h3>Aquenos</h3>
+				<h3>XYZ Company</h3>
 				 <div class="story-desc"> 
-				 Appreciate your help and services. It worked really good for our restaurant.
-				 </div>
+				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
+				</div>
 			</div>
 			<div class="space col-4"> 
 				<div class="storyImg">
@@ -97,9 +97,9 @@
 						<img class="img-res" src="images/blog_3.jpg">
 					</a>
 				</div> 
-				<h3>Foodies</h3>
+				<h3>XYZ Company</h3>
 				 <div class="story-desc"> 
-				Thanks for all the solutions and services. Kudos to you and your team!
+				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
 				</div>
 			</div>
 		</div>
@@ -158,9 +158,6 @@
 															
 															<!-- footer --> 
 <?php include("include/footer.inc") ?>
-	<!-- footer end -->
-     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
 </body>
 </html>
