@@ -103,3 +103,11 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.sidebar-sticky ul .nav-item{padding: 5px;}
+.sidebar-sticky ul .nav-item a{color: #000 !important;font-size: 18px;font-family: "Roboto", sans-serif;}
+.page-header{font-size: 35px;margin-bottom: 30px;font-weight: 600;margin-top: 20px;font-family: "Roboto", sans-serif;}
+.px-4 .btn.btn-success{position: absolute;top: 30px;right: 30px;}
+a{color: #000;}
+.navbar{padding: 10px 0px !important;}
+h1{font-size: 35px;margin-bottom: 30px;font-weight: 600;margin-top: 20px;font-family: "Roboto", sans-serif;}
