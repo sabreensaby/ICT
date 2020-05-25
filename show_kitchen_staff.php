@@ -1,48 +1,67 @@
+<?php include('server.php'); ?>
+<!doctype html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="registration.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- meta character set -->
+	<meta charset="utf-8">
+	<title> Kitchen Staff </title>
+	<?php require_once 'include/header_css.php'; ?>
 </head>
 <body>
-
-<div id="wrapper">
-	<!-- Navigation Bar -->
-	       <?php include("include/nav.inc") ?>
-															<!-- Navigation Bar ends -->
-		<h1 style="text-align:center">STAFF</h1>
+	<div id="wrapper">
+		<!-- Navigation Bar -->
+		<?php include("include/nav.inc") ?>
+		<!-- Navigation Bar ends -->
 		
-<?php 
-include('server.php');
-$sql = "SELECT name, email, role, skills,years_of_experience,additional_details  FROM kitchen_staff";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-	?>
-	
-	
-	<table>
-<tr>
-<th>STAFF NAME </th>
-<th> EMAIL </th> 
-<th> ROLE</th>
-<th>MORE ACTION</th>
-</tr>
+		<!-- Services start-->
 
-<tr>
+		<div class="services">
+			<div class="container">
+				<div class="heading">
+					<h1 class="section-title">Kitchen Staff</h1>
+				</div>
+				<div class="services-container">
+					<table class="table" id="kitchen_stat">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Roll</th>
+								<th>Sallery</th>
+								<th>Experience</th>
+								<th>Skills</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<?php $kitchen_staff = print_kitchen_staff();
 
-<td> <?php echo $row["name"]?></td>
-<td> <?php echo $row["email"]?></td>
-<td> <?php echo $row["skills"]?></td>
-<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-</tr>
+						foreach ($kitchen_staff as $staff) {
+							//print_r($staff);
+							?>
+								<tr>
+									<td><?php echo $staff['staff_name'] ?></td>
+									<td><?php echo $staff['staff_email'] ?></td>
+									<td><?php echo $staff['staff_role'] ?></td>
+									<td>₹ <?php echo $staff['price'] ?></td>
+									<td><?php echo $staff['experience'] ?></td>
+									<td><?php echo $staff['skills'] ?></td>
+									<td> <a href="<?php echo ADMIN_ACTION_URL;?>?action=buy_service&id=<?php echo $staff['id'] ?>" class="btn btn-primary">Add to cart</a> </td>
+								</tr>
+						<?php }
+							// $img_name = $service_category_list['img_name'];
+							// $path = "images/".$img_name;
+						?>
 
-</table>
+							
+					</table>
 
-	
-   <?php }
-} else {
-    echo "0 results";
-}
-?>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Services end-->
+<?php include("include/footer.inc") ?>
+</body>
+</html>

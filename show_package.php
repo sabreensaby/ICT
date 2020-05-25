@@ -1,111 +1,53 @@
-
+<?php include('server.php'); ?>
 <!doctype html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Registration system PHP and MySQL</title>	
+	<?php require_once 'include/header_css.php'; ?>
+
 </head>
 <body>
+	<div id="wrapper">
+		<!-- Navigation Bar -->
+	    <?php include("include/nav.inc") ?>
+		<!-- Navigation Bar ends -->	
 
-<div id="wrapper">
-	<!-- Navigation Bar -->
-      <?php include("include/nav.inc") ?>
-<!-- Navigation Bar ends -->
-		
-		
-<?php 
-include('server.php');
-$sql = "SELECT package_name, package_desc, package_price  FROM package";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_array($result)) {
-	?>
-	
+		<section class="priceList">
+			<div class="heading">
+					<h2 class="section-title">Packages</h2>
+			</div>
+			<div class="container">
+				<div class="row" style="width: 100%;">
+					<?php 
+						$packages = print_packages();
+						foreach ($packages as $key => $package) { ?>
 
-<section class="priceList">
-	<div class="heading">
-			<h2 class="section-title">Packages</h2>
-		</div>
-	<div class="container">
-		<div class="row" style="width: 100%">
-			<div class="col-4">
-				<div class="packages">
-					<table>
-						<tr>
-						<td class="packname"> <?php echo $row["package_name"]?></td>
-						<td><h6>PACKAGE DESCRIPTION</h6></td>
-						<td> <?php echo $row["package_desc"]?></td>
-						<td> <div class="pricetag"><?php //echo $row["package_price"]?>300000/-</div></td>
-						<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-						</tr>
-					</table>
-				</div>	
+							<div class="col-4">
+								<div class="packages">
+									<table>
+										<tr>
+											<td class="packname"><?php echo ucfirst($package['package_name']); ?></td>
+										</tr>
+										<tr>
+											<td><h6>PACKAGE DESCRIPTION</h6></td></tr>
+										<tr>
+											<td><?php echo $package['package_desc']; ?></td></tr>
+										<tr>
+											<td> <div class="pricetag">₹ <?php echo $package['package_price']; ?></div></td></tr>
+										<tr>
+											<td>
+												<a class="btn btn-primary" href="<?php echo ADMIN_ACTION_URL;?>?action=buy_package&id=<?php echo $package['id'];?>">Buy Now</a>
+											</td>
+											
+										</tr>
+									</table>
+								</div>	
+							</div>
+					<?php }	?>
+				</div>
 			</div>
-			<div class="col-4">
-				<div class="packages">
-					<table>
-						<tr>
-						<td class="packname"> <?php echo $row["package_name"]?></td>
-						<td><h6>PACKAGE DESCRIPTION</h6></td>
-						<td> <?php echo $row["package_desc"]?></td>
-						<td> <div class="pricetag"><?php //echo $row["package_price"]?>350000/-</div></td>
-						<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-						</tr>
-					</table>
-				</div>	
-			</div>
-			<div class="col-4">
-				<div class="packages">
-					<table>
-						<tr>
-						<td class="packname"> <?php echo $row["package_name"]?></td>
-						<td><h6>PACKAGE DESCRIPTION</h6></td>
-						<td> <?php echo $row["package_desc"]?></td>
-						<td> <div class="pricetag"><?php //echo $row["package_price"]?>400000/-</div></td>
-						<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-						</tr>
-					</table>
-				</div>	
-			</div>
-			<div class="col-4">
-				<div class="packages">
-					<table>
-						<tr>
-						<td class="packname"> <?php echo $row["package_name"]?></td>
-						<td><h6>PACKAGE DESCRIPTION</h6></td>
-						<td> <?php echo $row["package_desc"]?></td>
-						<td> <div class="pricetag"><?php //echo $row["package_price"]?>370000/-</div></td>
-						<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-						</tr>
-					</table>
-				</div>	
-			</div>
-			<div class="col-4">
-				<div class="packages">
-					<table>
-						<tr>
-						<td class="packname"> <?php echo $row["package_name"]?></td>
-						<td><h6>PACKAGE DESCRIPTION</h6></td>
-						<td> <?php echo $row["package_desc"]?></td>
-						<td> <div class="pricetag"><?php //echo $row["package_price"]?>280000/-</div></td>
-						<td><button style="padding:10px;display: inline-block;">ADD TO CART</button></td>
-						</tr>
-					</table>
-				</div>	
-			</div>
-		</div>
+		</section>	
 	</div>
-</section>	
-
-<?php include("include/footer.inc") ?>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
-<?php } 
-} else {
-    echo "0 results";
-}
-?>
+	<?php include("include/footer.inc"); ?> 
+</body>
+</html>   

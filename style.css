@@ -21,7 +21,7 @@ background:#fff;padding: 0px;margin: 0px;
 
 #logo img{height: auto !important;width: 150px;}
 /*buttons*/
-.button{float :right;margin-top: 10px;}
+.button{float :right;margin-top: 15px;}
 
 .btn{
 list-style: none;
@@ -66,10 +66,10 @@ display: inline-block;
 
 }
 
-nav ul li a {text-decoration: none;font-family: "Roboto", sans-serif;font-weight: 400;padding:15px 30px;font-size:15px;color: #fff;text-transform: uppercase;letter-spacing: 1px;}
+nav ul li a {text-decoration: none;font-family: "Roboto", sans-serif;font-weight: 400;padding:15px 20px;font-size:15px;color: #fff;text-transform: uppercase;letter-spacing: 1px;}
 
 nav ul li a:hover{
-color:white;
+color:white;text-decoration: none;
 
 background-color: #f39d1a;
 transition: 0.8s all;
@@ -475,7 +475,9 @@ table {
 
 td,th {
 	text-align:center;
-	padding:8px;font-family: "Roboto", sans-serif;font-weight: 500;width: 100%;float: left;
+	padding:8px;font-family: "Roboto", sans-serif;font-weight: 500;
+  width: 100%;
+  float: left;
 	
 }
 .packname{font-size: 36px;color: #140400;font-family: 'Playfair Display', serif;font-weight: 700;}
@@ -486,12 +488,14 @@ text-transform: uppercase;position: relative;}
 .packages td ul li::before{position: absolute;left: 0px;top: 6px;background-image: url(./images/tick.svg);content: '';width: 16px;height: 16px;background-repeat: no-repeat;}
 .pricetag{font-size: 30px;color: #000000;font-family: "Roboto", sans-serif;font-weight: 900;}
 
-td button{font-family: "Roboto", sans-serif;font-weight: 400;background-color: #000;border: 0px;font-size: 15px;color: #fff;padding: 15px 35px !important;}
+td .btn{font-family: "Roboto", sans-serif;font-weight: 400;background-color: #000;border: 0px;font-size: 15px;color: #fff;padding: 13px 30px !important;
+border-radius: 0px;width: 100%;line-height: normal !important;}
+td .btn:hover{background-color: orange;}
 
-tr:nth-child(even) {
+/*tr:nth-child(even) {
 	
 	background-color: #dddddd;
-}
+}*/
 
 /* admin panel finish */
 
@@ -522,7 +526,7 @@ font-size: 33px;
 text-transform: capitalize;
 color: #000;}
 .input-group label{display: block;text-align: left;margin: 3px;font-weight: bold;font-family: "Roboto", sans-serif;font-weight: 500;font-size: 15px;margin-bottom: 5px;}
-.input-group input{height: 30px;
+.input-group input{height: 40px;
 width: 100%;
 float: left;
 background-color: transparent;
@@ -574,7 +578,7 @@ font-family: "Roboto", sans-serif;
 font-weight: 400;color: #666666;}
 .aboutboxImg img{width: 100%;}
 
-.packages{width: 338px;height: 470px;float: left;background-color: #f5f0e7;margin-bottom: 30px;}
+.packages{width: 338px;height: auto;float: left;background-color: #f5f0e7;margin-bottom: 30px;padding: 30px;}
 .priceList{padding: 60px 0px;width: 100%;float: left;}
 
 /****cart***/
@@ -806,7 +810,122 @@ border-radius: 0px;}
 .fdform input::placeholder{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 13px;color: #000 !important;}
 .fdform textarea::placeholder{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 13px;color: #000 !important;}
 
-.happyClients{width: 100%;float: left;background-color: #000;}
+.happyClients{width: 100%;float: left;background-color: #000;padding-bottom: 120px !important;}
 .happyClients p{font-family: 'Playfair Display', serif;font-weight: 400;font-style: italic;color: #fff;text-align: center;line-height: 1.9;margin-bottom: 50px;}
 .happyClients h2{color: #fff !important;}
 .happyClients h6{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 15px;color: #fff !important;text-align: center;}
+
+.whitetitle{color: #fff !important;}
+.ls_service .col-4{margin-bottom: 35px;}
+.ls_service{background-color: #222222 !important;width: 100%;float: left;}
+
+
+.fdbacks{width: 100%;float: left;background-color: orange;border-radius: 15px;margin-bottom: 25px;padding: 20px;}
+.fdd form{width: 100% !important;background-color: transparent !important;}
+.fdd button{background-color: #000 !important;border-radius: 0px !important;}
+
+.fdloop{width: 100%;padding: 30px;background-color: orange;margin-left: 15px;margin-bottom: 15px;margin-bottom: 15px;display: inline-block;float: none;margin: 7.5px 0 !important;}
+.fdcontent{-moz-column-count: 2;
+-webkit-column-count: 2;
+column-count: 2;
+column-gap: 15px;
+column-fill: initial;
+width: 100%;}
+
+.btn{border-radius: 0px;background-color: #000;padding: 8px 35px;}
+.checkOut .btn{float: left;width: 100%;}
+
+.product_name{font-family: "Roboto", sans-serif !important;font-weight: 500 !important;font-size: 27px !important;}
+
+.sritems h3.title{font-family: "Roboto", sans-serif !important;font-weight: 500 !important;font-size: 20px !important;color: #000 !important;margin-top: 10px;margin-bottom: 50px !important;}
+.sritems h3.title:hover{text-decoration: none;color: orange !important;}
+.sritems a{text-decoration: none;}
+
+#kitchen_stat{float: left; width: 100%;}
+#kitchen_stat th, td {
+    width: auto;
+    float: none;
+    text-align: left;
+}
+.table td, .table th{
+  float: none;
+  width: auto;
+  text-align: left;
+}
+
+#add_edit_address{width: 100%;}
+#add_edit_address .form-group{width: 100%;}
+.adminpanel{width:70%;margin: 0 auto;}
+.adminwhite{margin-top: 30%;background-color: rgb(255,255,255, 0.8);width: 100%;float: left;padding: 50px}
+.amdinbg{width: 100%;float: left;background-image: url(images/parallax_1.jpg);height: 100vh;}
+.amdinbg form{background-color: transparent;width: 100%;}
+.amdinbg form .form-group{width: 100%;}
+.amdinbg form .form-group input{border-color: #000 !important;border-radius: 0px;height: 40px;}
+.amdinbg form .form-group button{border:none !important;}
+.amdinbg form .form-group button:hover{background-color: orange;}
+
+.sidebar-sticky ul .nav-item a{color: #000 !important;}
+
+.thanksyou p{font-family: "Roboto", sans-serif;text-align: center;width: 100%;float: left;margin-bottom: 10px !important;
+color: #808080;
+font-weight: 400;
+font-size: 16px;}
+
+.myacc ul{background-color: #000;padding: 15px 0px;}
+.myacc ul li{float: left;width: 100%;}
+.myacc ul li a{color: #fff;float: left;}
+#contact td a{color: #000;}
+#add_edit_address .form-group button{float: left;}
+#contact thead{background-color: #000;}
+#contact thead tr th{color: #fff;}
+#contact label{font-family: "Roboto", sans-serif;
+font-weight: 500;
+font-size: 15px;
+margin-bottom: 5px;}
+#contact input{height: 40px;
+width: 100%;
+float: left;
+background-color: transparent;
+border: 1px solid #e0e1e2;
+outline: medium none;
+padding: 7px;
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-size: 15px;
+color: #000 !important;border-radius: 0px !important;}
+#contact textarea{
+width: 100%;
+float: left;
+background-color: transparent;
+border: 1px solid #e0e1e2;
+outline: medium none;
+padding: 7px;
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-size: 15px;
+color: #000 !important;border-radius: 0px !important;}
+
+.cart-icon a{color: #fff !important;font-family: "Roboto", sans-serif;font-size: 14px;
+font-weight: 300;}
+.cart-icon{float: left;margin: 0px 10px;}
+.topbar{width: 100%;float: left;background-color: orange;padding: 5px 0px;}
+.topbar .float-right{float: right;margin-right: 25px;}
+
+.happyClients button{position: absolute;bottom: -60px;color: #fff !important;background-color: orange;border:none;padding: 5px 15px;z-index: 1010;border-radius: 15px;}
+.happyClients button.slick-next{left: 52%;}
+.happyClients button.slick-prev {left: 42%;}
+.happyClients #newSlider{overflow: unset !important;}
+
+.sritems .item-img img{width: 100%;}
+.single_product .product_quantity{border-radius: 0px;}
+.single_product button{border:0px;}
+.checkOut .btn{border:0px;}
+.checkOut .btn:hover{background-color: orange !important;}
+.cartservice .btn{border:0px;}
+.cartservice .btn:hover{background-color: orange !important;}
+#cont tbody a{color: #000;}
+
+.coTotal p{ color: #fff;}
+.checkOut .btn{
+  width: auto;
+}

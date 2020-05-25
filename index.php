@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!doctype html>
 <html>
 <head>
@@ -6,151 +7,115 @@
 <!-- meta character set -->
 <meta charset="utf-8">
 <title> Consultation </title>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="slick.css">
-
+	<?php require_once 'include/header_css.php'; ?>
 </head>
 <body>
 <div id="wrapper">
+    <?php include("include/nav.inc") ?>
+	<!-- Navigation Bar ends -->
 
-
-
-<!-- Navigation Bar -->
-      <?php include("include/nav.inc") ?>
-<!-- Navigation Bar ends -->
-
-<section id="newSlider" class="lazy slider" data-sizes="50vw">
-    <div class="sliderImg" style="background-image: url(./images/slider_1.jpg);background-size: cover;">
-    	<div class="slideText">
-    		<h2>Startup</h2>
-    		<p>Where will your Business be this 
-    		time next year?</p>
-    	</div>
-    </div>
-    <div class="sliderImg" style="background-image: url(./images/slider_3.jpg);background-size: cover;">
-    	<div class="slideText">
-    		<h2>OPERATIONS</h2>
-    		<p>Where will your Business be this 
-    		time next year?</p>
-    	</div>
-    </div>
-    <div class="sliderImg" style="background-image: url(./images/slider_2.jpg);background-size: cover;">
-    	<div class="slideText">
-    		<h2>BUSINESS PLANNING</h2>
-    		<p>when was the last time you thought of having a business</p>
-    	</div>
-    </div>
-</section>
-
-
-<!-- Services start-->
-
-<div class="services">
-	<div class="container">
-		<div class="heading">
-			<h2 class="section-title">Our Services</h2>
-			<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+	<section id="newSlider" class="lazy slider" data-sizes="50vw">
+		<div class="sliderImg" style="background-image: url(./images/slider_1.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>Startup</h2>
+				<p>Where will your Business be this 
+				time next year?</p>
+			</div>
 		</div>
-		<div class="services-container">
-			<a href="#" class="service-box col-4"> 
-				<div class="serice-img">
-					<img src="images/ser_1.png" class="img-responsive" alt="img" title="img">
-				</div>
-				<div class="service-title">Kitchen Setup</div>
-				<div class="service-desc">
-				The Kitchen Service provides services like kitchen staff, kitchen equipments and different kitchen services
-				</div>
-			</a>
-			<a href="#" class="service-box col-4"> 
-				<div class="serice-img">
-					<img src="images/ser_2.png" class="img-responsive" alt="img" title="img">
-				</div>
-				<div class="service-title">Restaurant Setup </div>
-				<div class="service-desc">
-				Restaurant Setup provides different services for connections like water connection, gas connection and electricity connection.
-				</div>
-			</a>
-			<a href="#" class="service-box col-4"> 
-				<div class="serice-img">
-					<img src="images/ser_1.png" class="img-responsive" alt="img" title="img">
-				</div>
-				<div class="service-title">Design Setup </div>
-				<div class="service-desc">
-			Design services mainly provide services like Menu design, receipies design and interior design of the restaurant.
+		<div class="sliderImg" style="background-image: url(./images/slider_3.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>OPERATIONS</h2>
+				<p>Where will your Business be this 
+				time next year?</p>
+			</div>
+		</div>
+		<div class="sliderImg" style="background-image: url(./images/slider_2.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>BUSINESS PLANNING</h2>
+				<p>when was the last time you thought of having a business</p>
+			</div>
+		</div>
+	</section>
+	<div class="services">
+		<div class="container">
+			<div class="heading">
+				<h2 class="section-title">Our Services</h2>
+				<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+			</div>
+			<div class="services-container">
 
-				</div>
-			</a>
+			<?php 
+				$service_category_lists = print_service_category();
+				foreach ($service_category_lists as $service_category_list) {
+
+					$img_name = $service_category_list['img_name'];
+					$path = "images/".$img_name;
+				?>
+
+					<a href="service_types.php?service_id=<?php echo $service_category_list['id'];?>" class="service-box col-4"> 
+						<div class="serice-img">
+							<img src="<?php echo $path;?>" class="img-responsive" alt="img" title="img">
+						</div>
+						<div class="service-title"><?php echo ucwords($service_category_list['service_cat']); ?></div>
+						<div class="service-desc"><?php echo $service_category_list['service_description']; ?></div>
+					</a>
+			<?php } ?>
+			</div>
 		</div>
 	</div>
-</div>
-
-
-<!--Services end-->
-<!-- Background Image-->
-
-<div id="section" class="parasection">
-	<div class="parallaxText">
-		<h3>We are just a click away.<br>
-		start building your dreams right away.</h3>
-	</div>
-</div>
-
-<!-- Background Image end-->
-
-       
-<!-- Success stories-->
-
-<div id="stories">
-	<div class="container">
-		<div class="heading">
-			<h2 class="section-title">Read Our Stories</h2>
+	<div id="section" class="parasection">
+		<div class="parallaxText">
+			<h3>We are just a click away.<br>
+			start building your dreams right away.</h3>
 		</div>
-		<div id="story"> 
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_1.jpg">
-					</a>
-				</div> 
-				<h3>CheeseDaddy</h3>
-				 <div class="story-desc"> 
-					Best Consultants to work with!
+	</div>
+	<div id="stories">
+		<div class="container">
+			<div class="heading">
+				<h2 class="section-title">Read Our Stories</h2>
+			</div>
+			<div id="story"> 
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_1.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+					</div>
 				</div>
-			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_2.jpg">
-					</a>
-				</div> 
-				<h3>Aquenos</h3>
-				 <div class="story-desc"> 
-				 Appreciate your help and services. It worked really good for our restaurant.
-				 </div>
-			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_3.jpg">
-					</a>
-				</div> 
-				<h3>Foodies</h3>
-				 <div class="story-desc"> 
-				Thanks for all the solutions and services. Kudos to you and your team!
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_2.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
+					</div>
+				</div>
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_3.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- Success stories end-->
-
-<!-- footer -->
-<?php include("include/footer.inc") ?>
-   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
+	<?php include("include/footer.inc") ?>
+   	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
     $(document).on('ready', function() {
       $(".vertical-center-4").slick({
         dots: true,

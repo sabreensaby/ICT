@@ -1,17 +1,6 @@
 <?php
-	include('server.php');
-	session_start();
-
-	$user_check = $_SESSION['login_user'];
-
-	$ses_sql = mysqli_query($conn,"'$user_check' ");
-
-	$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-
-	$login_session = $row['username'];
-
-	if(!isset($_SESSION['login_user'])){
-		header("location:login.php");
-		die();
+	ob_start();
+	if(!isset($_SESSION['id'])){
+		header('location:login.php');
 	}
 ?>
