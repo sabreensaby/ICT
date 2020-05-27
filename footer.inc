@@ -3,8 +3,12 @@
 		<div class="container">
 			<div class="row footer-grids">
 				<div class="terms contact">
-					<h4>Terms and Conditions</h4>
-					<p>you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+					<h4><a href= "terms_conditions.php">Terms and Conditions </a></h4>
+					<p>These Website Standard Terms and Conditions written on this 
+					webpage shall manage your use of our website, 
+					Nostalgic Eatery accessible at http://localhost/ict/index.php.
+					</p>
+
 				</div>
 				<div class="terms contact">
 					<h4>Contact No:</h4>
