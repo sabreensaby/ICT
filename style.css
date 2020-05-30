@@ -189,11 +189,12 @@ font-size:20px;
 text-transform:capitalize;
 margin-top:7%;
 list-style: none;font-family: 'Playfair Display', serif;font-weight: 900;
-text-decoration:none;color: #333333;
+text-decoration:none;
+color: #333333;
 
 }
 
-.service-desc{font-size:13px;float:left;width:100%;margin-top:5%;text-align: center;text-decoration:none;line-height: 25px;letter-spacing: .5px;
+.service-desc{font-size:13px;float:left;width:100%;margin-top:5%;text-align:justify;text-decoration:none;line-height: 25px;letter-spacing: .5px;
 font-family: "Roboto", sans-serif;font-weight: 400;color: #666666;}
 /* Services end*/
 
@@ -286,7 +287,7 @@ margin-right:5%;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
-
+    
 }
 
 
@@ -512,7 +513,7 @@ td .btn:hover{background-color: orange;}
 
 .footer{width: 100%;margin-top:auto;background-color:#222222;text-align:center;padding: 60px 0px;float: left;}
 .terms{float:left;width:30%;padding: 0px 15px;}
-.contact h4{text-align:left;font-family: 'Playfair Display', serif;font-weight: 700;text-transform: capitalize;color:#fff;margin-bottom: 25px;margin-top: 0px;}
+.contact h4{text-align:left;font-family: 'Playfair Display', serif;font-weight: 700;text-transform: capitalize;color:#dae0e5;margin-bottom: 25px;margin-top: 0px;}
 .contact p {text-align:left; font-size:14px;color:white;line-height: 1.6em;font-family: "Roboto", sans-serif;font-weight: 300;}
 
 .custitle{width: 100%;float: left;}
@@ -810,7 +811,8 @@ border-radius: 0px;}
 .fdform input::placeholder{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 13px;color: #000 !important;}
 .fdform textarea::placeholder{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 13px;color: #000 !important;}
 
-.happyClients{width: 100%;float: left;background-color: #000;padding-bottom: 120px !important;}
+.happyClients{width: 100%;float: left;background-color: #000;padding-bottom: 120px !important;
+}
 .happyClients p{font-family: 'Playfair Display', serif;font-weight: 400;font-style: italic;color: #fff;text-align: center;line-height: 1.9;margin-bottom: 50px;}
 .happyClients h2{color: #fff !important;}
 .happyClients h6{font-family: "Roboto", sans-serif;font-weight: 400;font-size: 15px;color: #fff !important;text-align: center;}

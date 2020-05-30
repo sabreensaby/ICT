@@ -63,50 +63,11 @@
 			<?php endforeach;?>
 		</div>
 	</div>
-</section>	
-<div id="stories">
-	<div class="container">
-		<div class="heading">
-			<h2 class="section-title">Read Our Stories</h2>
-		</div>
-		<div id="story"> 
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_1.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
-				</div>
-			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_2.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
-				</div>
-			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_3.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Success stories end-->
+	
+</section>
+<div class="blank" style="width:80px;">
+<p>&nbsp; &nbsp </p>
+</div>	
 
 <!-- footer -->
 <?php include("include/footer.inc"); ?>
