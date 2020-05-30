@@ -1,65 +1,34 @@
-<?php include('server.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="registration.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<h1 class="page-header">Gas Providers</h1>
+<a class="btn btn-success" href="index.php?content=add_edit_gas_providers">Add Gass Providers</a>
 
-<div id="wrapper">
-	<!-- Navigation Bar -->
-	       <?php include("include/nav.inc") ?>
-															<!-- Navigation Bar ends -->
-<div class="admin_service" style="margin-left:40%; margin-bottom:3%; margin-top:2%;">
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Gas Providers</th>
+                <th>Details</th>
+                <th>Price</th>
+                <th>Created_At</th>
+                <th>Action</th>
 
-<h2>Add Gas Service</h2>
-	</div>
- </div>
+            </tr>
+        </thead>
+        <tbody>
 
-<form action="#" method="post">
+            <?php foreach ($gas_connections as $gas_connection) : ?>
+                <tr>
+                    <td><?php echo $gas_connection['id']; ?></td>
+                    <td><?php echo $gas_connection['gas_service_provider']; ?></td>
+                    <td><?php echo $gas_connection['gas_connection_details']; ?></td>
+                    <td><?php echo $gas_connection['gas_price']; ?></td>
+                    <td><?php echo $gas_connection['created_at']; ?></td>
+                    <td>
+                        <a href="<?php echo ADMIN_ACTION_URL ?>?action=delete_gas_connection&id=<?php echo $gas_connection['id']; ?>" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
 
-
-  <div class="input-group">
-  <label>Gas Service Provider</label>
-<select name="gas_provider">
-  <option value="Select">Select</option>
-  <option value="Indane">Indane Gas</option>
-  <option value="Bharat">Bharat Gas</option>
-  <option value="Gujarat">Gujarat Gas</option>
-    <option value="Indian">Indian Gas</option>
- 
-
-</select>
+        </tbody>
+    </table>
 </div>
-
-
-
-<div class="input-group">
-<label>Details</label>
-<textarea name="gas_details"></textarea><br>
-</div>
-<div class="input-group">
-<label>Price</label>
-<input type="text" name="gas_price" required><br>
-</div>
-<div class="input-group">
-<button type="submit" class="btn" name="ok_gas">OK</button>
-</div>
-<div class="input-group">
-<button type="cancel" class="btn" name="cancel_gas">CANCEL</button>
-</div>
-</form>
-
-
-
-
-
-
-
-</div>
-		
-	
-</body>
-</html>

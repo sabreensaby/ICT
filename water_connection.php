@@ -1,64 +1,34 @@
-<?php include('server.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="registration.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<h1 class="page-header">Water Providers</h1>
+<a class="btn btn-success" href="index.php?content=add_edit_water_providers">Add Water Providers</a>
 
-<div id="wrapper">
-	<!-- Navigation Bar -->
-	       <?php include("include/nav.inc") ?>
-															<!-- Navigation Bar ends -->
-<div class="admin_service" style="margin-left:40%; margin-bottom:3%; margin-top:2%;">
-<h2>Add Water Connection </h2>
-	</div>
- </div>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Water Providers</th>
+				<th>Details</th>
+				<th>Price</th>
+				<th>Created_At</th>
+				<th>Action</th>
 
-<form action="#" method="post">
+			</tr>
+		</thead>
+		<tbody>
 
+			<?php foreach ($water_connections as $water_connection) : ?>
+				<tr>
+					<td><?php echo $water_connection['id']; ?></td>
+					<td><?php echo $water_connection['water_connection_provider']; ?></td>
+					<td><?php echo $water_connection['water_connection_details']; ?></td>
+					<td><?php echo $water_connection['water_price']; ?></td>
+					<td><?php echo $water_connection['created_at']; ?></td>
+					<td>
+						<a href="<?php echo ADMIN_ACTION_URL ?>?action=delete_water_connection&id=<?php echo $water_connection['id']; ?>" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			<?php endforeach; ?>
 
-  <div class="input-group">
-  <label>Water Service Provider</label>
-<select name="water_provider">
-  <option value="Select">Select</option>
-  <option value="GWSSB">GWSSB</option>
-  <option value="GWSASB">GWSASB</option>
-  <option value="Gujarat Water Supplier">Gujarat Water Supplier</option>
-    <option value="Earth Water Provider">Earth Water Provider</option>
- 
-
-</select>
+		</tbody>
+	</table>
 </div>
-
-
-
-<div class="input-group">
-<label>Details</label>
-<textarea name="water_details"></textarea><br>
-</div>
-<div class="input-group">
-<label>Price</label>
-<input type="text" name="water_price" required><br>
-</div>
-<div class="input-group">
-<button type="submit" class="btn" name="ok_water">OK</button>
-</div>
-<div class="input-group">
-<button type="cancel" class="btn" name="cancel_water">CANCEL</button>
-</div>
-</form>
-
-
-
-
-
-
-
-</div>
-		
-	
-</body>
-</html>

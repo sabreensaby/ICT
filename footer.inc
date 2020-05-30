@@ -12,7 +12,9 @@
 				</div>
 				<div class="terms contact">
 					<h4>Contact No:</h4>
+					<p> Nostalgic Eatery </p>
 					<p> +919274747410 </p>
+					<p><a href="contact.php"> Find Us Here </a> </p>
 				</div>
 				<div class="terms contact">
 					<h4>Location:</h4>
