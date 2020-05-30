@@ -1,41 +1,60 @@
-<h1 class="page-header">Services</h1>
-<a class="btn btn-success" href="index.php?content=add_edit_services">Add Service</a>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Service Name</th>
-                <th>Name</th>
-                <th>Staff Email</th>
-                <th>Staff Roll</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Created_At</th>
-                <th>Action</th>
+<?php include('server.php'); ?>
+<!doctype html>
+<html>
+<head>
+	<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- meta character set -->
+		<meta charset="utf-8">
+	<title> Consultation </title>
+	<?php require_once 'include/header_css.php'; ?>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- Navigation Bar -->
+		<?php include("include/nav.inc") ?>
+		<!-- Navigation Bar ends -->
+		<section id="newSlider" class="lazy slider" data-sizes="50vw">
+		    <div class="sliderImg kitchenSetimg" style="background-image: url(./images/kitchenSetup.jpg);background-size: cover;">
+		    	<div class="slideText">
+		    		<h2>Our Services</h2>
+		    		<p>Where will your Business be this 
+		    		time next year?</p>
+		    	</div>
+		    </div>
+		</section>
+		
+		<!-- Services start-->
 
-            </tr>
-        </thead>
-        <tbody>
+		<div class="services">
+			<div class="container">
+				<div class="heading">
+					<h2 class="section-title">Our Services</h2>
+					<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+				</div>
+				<div class="services-container">
 
-            <?php foreach ($service_lists as $service_list) : ?>
-                <tr>
-                    <td><?php echo $service_list['id']; ?></td>
-                    <td><?php echo $service_list['service_type']; ?></td>
-                    <td><?php echo $service_list['staff_name']; ?></td>
-                    <td><?php echo $service_list['staff_email']; ?></td>
-                    <td><?php echo $service_list['staff_role']; ?></td>
-                    <td><?php echo $service_list['descriptions']; ?></td>
-                    <td><?php echo $service_list['price']; ?></td>
+					<?php 
+						$service_category_lists = print_service_category();
+						foreach ($service_category_lists as $service_category_list) {
 
-                    <td><?php echo $service_list['created_at']; ?></td>
-                    <td>
-                        <a href="index.php?content=add_edit_services&id=<?php echo $service_list['id']; ?>" class="btn btn-primary">Edit</a>
-                        <a href="<?php echo ADMIN_ACTION_URL ?>?action=delete_service&id=<?php echo $service_list['id']; ?>" class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+							$img_name = $service_category_list['img_name'];
+							$path = "images/".$img_name;
+						?>
 
-        </tbody>
-    </table>
-</div>
+							<a href="service_types.php?service_id=<?php echo $service_category_list['id'];?>" class="service-box col-4"> 
+								<div class="serice-img">
+									<img src="<?php echo $path;?>" class="img-responsive" alt="img" title="img">
+								</div>
+								<div class="service-title"><?php echo ucwords($service_category_list['service_cat']); ?></div>
+								<div class="service-desc"><?php echo $service_category_list['service_description']; ?></div>
+							</a>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Services end-->
+<?php include("include/footer.inc") ?>
+</body>
+</html>

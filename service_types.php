@@ -1,37 +1,77 @@
-<h1 class="page-header">Service Types</h1>
-<a class="btn btn-success" href="index.php?content=add_edit_service_type">Add Service Type</a>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Image</th>
-                <th>Created At</th>
-                <th>Action</th>
+<?php include('server.php'); ?>
 
-            </tr>
-        </thead>
-        <tbody>
+<!doctype html>
+<html>
+<head>
+<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- meta character set -->
+		<meta charset="utf-8">
+<title> Consultation </title>
 
-            <?php foreach ($service_category_lists as $service_category_lists) : ?>
-                <?php $path = "../images/".$service_category_lists['img_name'];?>
+<?php require_once 'include/header_css.php'; ?>
 
-                <tr>
-                    <td><?php echo $service_category_lists['id']; ?></td>
-                    <td><?php echo $service_category_lists['service_type']; ?></td>
-                    <td><?php echo $service_category_lists['service_cat']; ?></td>
-                    <td><img src="<?php echo $path; ?>" width="80"></td>
 
-                    <td><?php echo $service_category_lists['created_at']; ?></td>
-                    <td>
-                        <a href="index.php?content=add_edit_service_type&id=<?php echo $service_category_lists['id']; ?>" class="btn btn-primary">Edit</a>
-                        <a href="<?php echo ADMIN_ACTION_URL ?>?action=delete_service_type&id=<?php echo $service_category_lists['id']; ?>" class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+</head>
+<body>
+	<div id="wrapper">
+	
 
-        </tbody>
-    </table>
-</div>
+	
+		<!-- Navigation Bar -->
+		<?php include("include/nav.inc") ?>
+		<!-- Navigation Bar ends -->
+		<section id="newSlider" class="lazy slider" data-sizes="50vw">
+		    <div class="sliderImg kitchenSetimg" style="background-image: url(./images/kitchenSetup.jpg);background-size: cover;">
+		    	<div class="slideText">
+		    		<h2>Service Types</h2>
+		    		<p>Where will your Business be this 
+		    		time next year?</p>
+		    	</div>
+		    </div>
+		</section>
+		
+		<!-- Services start-->
+
+		<div class="services">
+			<div class="container">
+				<div class="heading">
+					<h2 class="section-title">Service types</h2>
+					<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+				</div>
+				<div class="services-container">
+
+					<?php 
+						$service_id = "";
+						if(isset($_REQUEST['service_id']) && !empty($_REQUEST['service_id'])){
+							$service_id = $_REQUEST['service_id'];
+						}
+						$service_types_lists = print_service_types_by_service_id($service_id);
+
+						foreach ($service_types_lists as $service_type_lists) {
+
+							$img_name = $service_type_lists['img_name'];
+							$path = "images/".$img_name;
+							//show_kitchen_staff
+							$page_link = "items_list.php?id=".$service_type_lists['id'];
+							if($service_type_lists['is_staff_page']=="yes"){
+								$page_link = "show_kitchen_staff.php";
+							}
+
+						?>
+
+							<a href="<?php echo $page_link;?>" class="service-box col-4"> 
+								<div class="serice-img">
+									<img src="<?php echo $path;?>" class="img-responsive" alt="img" title="img">
+								</div>
+								<div class="service-title"><?php echo ucwords($service_type_lists['service_type']); ?></div>
+							</a>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Services end-->
+<?php include("include/footer.inc") ?>
+</body>
+</html>

@@ -1,222 +1,181 @@
-<?php include('../server.php'); ?>
-<?php include_once "check_session.php"; ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
+<?php include('server.php'); ?>
+<!doctype html>
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Dashboard Template for Bootstrap</title>
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href="../css/dashboard.css" rel="stylesheet">
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- meta character set -->
+<meta charset="utf-8">
+<title> Consultation </title>
+	<?php require_once 'include/header_css.php'; ?>
 </head>
-
 <body>
+<div id="wrapper">
+    <?php include("include/nav.inc") ?>
+	<!-- Navigation Bar ends -->
 
-	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ICT</a>
-		<ul class="navbar-nav px-3">
-			<li class="nav-item text-nowrap">
-				<a class="nav-link" href="<?php echo ADMIN_ACTION_URL?>?action=logout">Sign out</a>
-			</li>
-		</ul>
-	</nav>
+	<section id="newSlider" class="lazy slider" data-sizes="50vw">
+		<div class="sliderImg" style="background-image: url(./images/slider_1.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>Startup</h2>
+				<p>Where will your Business be this 
+				time next year?</p>
+			</div>
+		</div>
+		<div class="sliderImg" style="background-image: url(./images/slider_3.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>OPERATIONS</h2>
+				<p>Where will your Business be this 
+				time next year?</p>
+			</div>
+		</div>
+		<div class="sliderImg" style="background-image: url(./images/slider_2.jpg);background-size: cover;">
+			<div class="slideText">
+				<h2>BUSINESS PLANNING</h2>
+				<p>when was the last time you thought of having a business</p>
+			</div>
+		</div>
+	</section>
+	<div class="services">
+		<div class="container">
+			<div class="heading">
+				<h2 class="section-title">Our Services</h2>
+				<p class="subline">Find the best services for your businesses, We help businesses like your everyday</p>
+			</div>
+			<div class="services-container">
 
-	<div class="container-fluid">
-		<div class="row">
+			<?php 
+				$service_category_lists = print_service_category();
+				foreach ($service_category_lists as $service_category_list) {
 
-			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-				<div class="sidebar-sticky">
-
-					<ul class="nav flex-column">
-						<li class="nav-item"><a href="index.php?content=service_category">Service Categories</a></li>
-						<li class="nav-item"><a href="index.php?content=service_types">Service Types</a></li>
-						<li class="nav-item"><a href="index.php?content=services">Add Services</a></li>
-						<li class="nav-item"><a href="index.php?content=products">Add Products</a></li>
-						<li class="nav-item"><a href="index.php?content=users">Users</a></li>
-						<!-- <li class="nav-item"><a href="index.php?content=gas_connection">Gass Connectins</a></li>
-						<li class="nav-item"><a href="index.php?content=water_connection">Water supply</a></li> -->
-						<li class="nav-item"><a href="index.php?content=packages">Packages</a></li>
-						<li class="nav-item"><a href="index.php?content=contacted_messages">Contacted messages</a></li>
-						<li class="nav-item"><a href="index.php?content=feedback">Feedback</a></li>
-						<li class="nav-item"><a href="index.php?content=orders">Orders</a></li>
-						<li class="nav-item"><a href="index.php?content=ordered_packages">Purchased Packages</a></li>
-						<li class="nav-item"><a href="index.php?content=staff_services">Staff Service</a></li>
-
-						
-					</ul>
-
-				</div>
-			</nav>
-
-			<div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-				<?php
-					$content = "";
-					if (isset($_REQUEST['content'])) {
-						$content = $_REQUEST['content'];
-					}
-					switch ($content) {
-						case 'service_category':
-							$service_category_lists = print_service_category();
-							include_once "service_category.php";
-							break;
-
-						case 'add_edit_service_cat':
-							$service_category_lists = [];
-							if (isset($_REQUEST['id'])) {
-								$id = $_REQUEST['id'];
-								$service_category_lists = print_service_category($id);
-							}
-							include_once "add_service_category.php";
-							break;
-						case 'service_types':
-							$service_category_lists = print_service_types();
-							include_once "service_types.php";
-							break;
-
-						case 'add_edit_service_type':
-							$service_category_lists = [];
-							$service_type_data = [];
-
-							if (isset($_REQUEST['id'])) {
-								$id = $_REQUEST['id'];
-								$service_type_data = print_service_types($id);
-							}
-
-							$service_category_lists = print_service_category();
-							include_once "add_service_type.php";
-							break;
-
-						case 'products':
-							$products = print_products();
-							include_once "products.php";
-							break;
-
-						case 'services':
-							$service_lists = print_services();
-							include_once "services.php";
-							break;
-
-						case 'add_edit_services':
-							$service_category_lists = [];
-							$service_type_data = [];
-							if (isset($_REQUEST['id'])) {
-								$id = $_REQUEST['id'];
-								$service_type_data = print_services($id);
-							}
-							$service_type_lists = print_service_types();
-							include_once "add_edit_services.php";
-							break;
-
-						case 'add_edit_products':
-							$service_category_lists = [];
-							$service_type_data = [];
-							if (isset($_REQUEST['id'])) {
-								$id = $_REQUEST['id'];
-								$products = print_products($id);
-							}
-
-							$service_type_lists = print_service_types();
-							include_once "add_edit_products.php";
-							break;
-
-
-
-						case 'users':
-							$users = print_users();
-							include_once "users.php";
-							break;
-
-						case 'gas_connection':
-							$gas_connections = print_gas_connection();
-							include_once "gas_connection.php";
-							break;
-
-						case 'add_edit_gas_providers':
-							// if (isset($_REQUEST['id'])) {
-							// 	$id = $_REQUEST['id'];
-							// 	$gas_connections = print_gas_connection($id);
-							// }
-							include_once "add_edit_gas_providers.php";
-							break;		
-
-						case 'water_connection':
-							$water_connections = print_water_connection();
-							include_once "water_connection.php";
-							break;
-
-
-						case 'add_edit_water_providers':
-							// if (isset($_REQUEST['id'])) {
-							// 	$id = $_REQUEST['id'];
-							// 	$gas_connections = print_gas_connection($id);
-							// }
-							include_once "add_edit_water_providers.php";
-							break;
-
-						case 'packages':
-							$packages = print_packages();
-							include_once "packages.php";
-							break;
-
-						case 'add_edit_packages':
-							include_once "add_edit_packages.php";
-							break;
-
-						case 'contacted_messages':
-							$contacted_messages = print_contacted_messages();
-							include_once "contacted_messages.php";
-							break;
-						
-						case 'feedback':
-							$feedback = print_feedback();
-							include_once "feedback.php";
-							break;
-
-						case 'orders':
-							$orders_list = print_orders_list();
-							include_once "orders_list.php";
-							break;
-						
-						case 'orders_detail':
-							$id = "";
-							if (isset($_REQUEST['id'])) {
-								$id = $_REQUEST['id'];
-							}
-							$orders_detail = print_orders_detail($id);
-							include_once "orders_detail.php";
-							break;
-						
-						case 'ordered_packages':
-							$orders_packages = print_ordered_packages();
-							include_once "ordered_packages.php";
-							break;
-
-						case 'staff_services':
-							$orders_services = print_ordered_services();
-							include_once "ordered_services.php";
-							break;
-							
-							
-						default:
-							include_once "dashboard.php";
-							break;
-					}
+					$img_name = $service_category_list['img_name'];
+					$path = "images/".$img_name;
 				?>
 
+					<a href="service_types.php?service_id=<?php echo $service_category_list['id'];?>" class="service-box col-4"> 
+						<div class="serice-img">
+							<img src="<?php echo $path;?>" class="img-responsive" alt="img" title="img">
+						</div>
+						<div class="service-title"><?php echo ucwords($service_category_list['service_cat']); ?></div>
+						<div class="service-desc"><?php echo $service_category_list['service_description']; ?></div>
+					</a>
+			<?php } ?>
 			</div>
 		</div>
 	</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-
+	<div id="section" class="parasection">
+		<div class="parallaxText">
+			<h3>We are just a click away.<br>
+			start building your dreams right away.</h3>
+		</div>
+	</div>
+	<div id="stories">
+		<div class="container">
+			<div class="heading">
+				<h2 class="section-title">Read Our Stories</h2>
+			</div>
+			<div id="story"> 
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_1.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+					</div>
+				</div>
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_2.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
+					</div>
+				</div>
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_3.jpg">
+						</a>
+					</div> 
+					<h3>XYZ Company</h3>
+					<div class="story-desc"> 
+						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<?php include("include/footer.inc") ?>
+   	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      });
+      $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+      });
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+      });
+      $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+      $(".lazy").slick({
+      	slidesToScroll: 1,
+      	slidesToShow: 1,
+      	arrows:false,
+      	autoplay:true,
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+    });
+</script> 
 </body>
-
 </html>
