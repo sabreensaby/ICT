@@ -824,8 +824,8 @@ function print_orders_list(){
 	global $conn;
 	$table = "order_ids";
 	$query = "SELECT * FROM " . $table;
-	if(not_admin()){
-		$query .= " AND user_id =".$_SESSION['id'];
+	if( not_admin()){
+		$query .= " where user_id =".$_SESSION['id'];
 	}
 
 	$query .= " order by id DESC";
@@ -1163,7 +1163,8 @@ function add_edit_products($post_data)
 									img_name 			= '".$file_name."'
 									WHERE id 			= ".$post_data['product_id']
 							);
-	} else {		
+	} else {
+			
 		$query = mysqli_query($conn, "INSERT INTO ".$table." (product_code,product_name,product_cat, price,
 											descrptions, img_name) 
 										values ('".$post_data['product_code']."',
