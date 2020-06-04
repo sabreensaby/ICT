@@ -81,10 +81,10 @@
 							<img class="img-res" src="images/blog_1.jpg">
 						</a>
 					</div> 
-					<h3>XYZ Company</h3>
+					<h3>CheeseDaddy</h3>
 					<div class="story-desc"> 
-						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
-					</div>
+						Best Consultants to work with!
+						</div>
 				</div>
 				<div class="space col-4"> 
 					<div class="storyImg">
@@ -92,10 +92,11 @@
 							<img class="img-res" src="images/blog_2.jpg">
 						</a>
 					</div> 
-					<h3>XYZ Company</h3>
+					<h3>Aquenos</h3>
 					<div class="story-desc"> 
-						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
-					</div>
+						Appreciate your help and services. It worked really good for our restaurant.
+				 
+						</div>
 				</div>
 				<div class="space col-4"> 
 					<div class="storyImg">
@@ -103,9 +104,9 @@
 							<img class="img-res" src="images/blog_3.jpg">
 						</a>
 					</div> 
-					<h3>XYZ Company</h3>
+					<h3>Foodies</h3>
 					<div class="story-desc"> 
-						Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+						Thanks for all the solutions and services. Kudos to you and your team!
 					</div>
 				</div>
 			</div>

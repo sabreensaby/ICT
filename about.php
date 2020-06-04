@@ -64,97 +64,49 @@
 </section>
 
 <div id="stories">
-	<div class="container">
-		<div class="heading">
-			<h2 class="section-title">Read Our Stories</h2>
-		</div>
-		<div id="story"> 
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_1.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
-				</div>
+		<div class="container">
+			<div class="heading">
+				<h2 class="section-title">Read Our Stories</h2>
 			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_2.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod..
+			<div id="story"> 
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_1.jpg">
+						</a>
+					</div> 
+					<h3>CheeseDaddy</h3>
+					<div class="story-desc"> 
+						Best Consultants to work with!
+						</div>
 				</div>
-			</div>
-			<div class="space col-4"> 
-				<div class="storyImg">
-					<a href="#">
-						<img class="img-res" src="images/blog_3.jpg">
-					</a>
-				</div> 
-				<h3>XYZ Company</h3>
-				 <div class="story-desc"> 
-				 	Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_2.jpg">
+						</a>
+					</div> 
+					<h3>Aquenos</h3>
+					<div class="story-desc"> 
+						Appreciate your help and services. It worked really good for our restaurant.
+				 
+						</div>
+				</div>
+				<div class="space col-4"> 
+					<div class="storyImg">
+						<a href="#">
+							<img class="img-res" src="images/blog_3.jpg">
+						</a>
+					</div> 
+					<h3>Foodies</h3>
+					<div class="story-desc"> 
+						Thanks for all the solutions and services. Kudos to you and your team!
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-	<!-- <div id= "design">
-		
-		
-		
-		<div class="imageBox"> 
-			<div class="container">
-				<div class="aboutcontent">
-					<p>WHAT WE DO?
-
-						You need help to start your restaurant? We are waiting to hear from you! Do not think it is an easy job or think you are smart enough to do the start up work of restaurant all by yourself. Whatever that you do all by your self will give you issues until you close down your restaurant. So, it is always better to hire a consultant for proper planning of your restaurant.
-						Never depend on your local source that may cheat you and misguide you. Also, please do not involve your first employee in your restaurant for planning your restaurant as he/ she won’t be there tomorrow to save you from mistakes.
-
-						We are team of experts with major qualifications from hotel industry. We have many years of practical experience working from trainee to Head of Corporate Operations. We have screened more than 20 restaurants and are providing restaurant consultancy services to more than 10 clients worldwide. We assure excellent response and transparent services for your entire restaurant startup requirements. Do not get in to wrong directions. Contact us now and get a clear direction for success. <br>
-
-
-						WHO WE ARE?
-
-						We believe that hospitality industry is all about knowledge about caring and meeting the needs of the needy. 9pax cares about human needs and comforts that is required to ease up the human senses. There are 4 senses which we want to satisfy each time we take up any new restaurant projects and those are- look, feel, smell and hear. These senses must overall should create an experience that you must cherish for the rest of your lives.
-
-						There is always an advantage having an expert advisor beside you and guide you through right channels. We know what is what and who is who in the hospitality industry and have considerable experience to choose whom and to give the job to the right person.<br>
-
-						OUR MOTTO
-						"To be able to reach out to help no matter what" <br>
-
-						OUR VISION
-						"To fulfill the dreams of millions to realize their successful restaurant business worldwide"
-
-						Why you want to do business with us?
-						Highly qualified experts
-						Transparent and honest
-						Reasonable charges
-						One stop solution for all your needs
-						Continues consultancy support
-						Expert advices
-						Excellent end result oriented
-						Non- Compromising and Achiever
-						Providing you with right informations
-						Relieving you from all the tensions of setting up of your dream restaurant
-					</p>
-				</div>
-			</div>
-		</div>
-				
-
-		
-
-	</div> -->
-															
-															<!-- About end-->
+														<!-- About end-->
 															
 															<!-- footer --> 
 <?php include("include/footer.inc") ?>
